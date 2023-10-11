@@ -20,10 +20,10 @@ export default function Navbar() {
             <Link href="/">祭典一覽</Link>
           </li>
           <li className="">
-            <Link href="/">最近祭典</Link>
+            <Link href="/">搜尋祭典</Link>
           </li>
           <li className="">
-            <Link href="/">聯絡我們</Link>
+            <Link href="/">提供情報</Link>
           </li>
         </ul>
 
