@@ -5,10 +5,11 @@ let matsuriData = [
     place: "東京",
     eventName: "上野櫻花祭",
     eventNameJP: "うえの桜まつり",
+    month: "3",
     period: "3月中旬至3月下旬",
     location: "上野恩賜公園",
     feature: ["賞花", "賞夜櫻"],
-    transportatin: [
+    transportation: [
       {
         line: "JR山手線",
         station: "上野站",
@@ -16,6 +17,8 @@ let matsuriData = [
       },
     ],
     webLink: "https://ueno.or.jp/",
+    picture:
+      "https://images.unsplash.com/photo-1649562758202-b4de70e8959a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80",
     description:
       "俗稱上野公園，以美麗的櫻花大道聞名的「上野恩賜公園」，是日本人最孰悉的賞櫻勝地。公園內有以染井吉野櫻、山櫻等不同種類，合計高達1000棵的櫻花一同齊放形成非常壯觀的美景。場內也有許多攤販，可以在公園內邊野餐邊賞櫻，加上夜晚也會點燈讓賞櫻氣氛更加熱鬧!",
   },
@@ -25,10 +28,11 @@ let matsuriData = [
     place: "東京",
     eventName: "隅田川煙火大會",
     eventNameJP: "隅田川花火大会",
+    month: "7",
     period: "7月下旬",
     location: "淺草隅田川",
     feature: ["夏日祭典", "煙火大會"],
-    transportatin: [
+    transportation: [
       {
         line: "JR山手線、地下鐵銀座線、東武鐵道伊勢崎線、都營地下鐵淺草線",
         station: "淺草站",
@@ -45,10 +49,11 @@ let matsuriData = [
     place: "東京",
     eventName: "神宮外苑賞銀杏",
     eventNameJP: "神宮外苑いちょうまつり",
+    month: "11",
     period: "11月中旬至12月上旬",
     location: "神宮外苑",
     feature: ["賞花"],
-    transportatin: [
+    transportation: [
       {
         line: "JR中央線",
         station: "信濃町站",
@@ -70,10 +75,11 @@ let matsuriData = [
     place: "東京",
     eventName: "淺草鷲神社例大祭 酉之市",
     eventNameJP: "浅草鷲神社例大祭 酉の市",
+    month: "11",
     period: "11月上旬至中旬",
     location: "淺草鷲神社",
     feature: ["神社祭典"],
-    transportatin: [
+    transportation: [
       {
         line: "地下鐵日比谷線",
         station: "入谷站(北口3號出口)",

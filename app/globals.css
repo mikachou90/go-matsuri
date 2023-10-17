@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.mainLayout {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.globalPadding {
+padding: 20px 150px;
+}
+
+.hero-img {
+  background-image: url('/heroImage.jpg');
+  width:100%;
+  height: 500px;
+  object-fit: cover;
+}
