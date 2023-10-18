@@ -16,38 +16,44 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full border-2 border-red-400 flex flex-col items-center">
+        <div className="w-full border-2 border-black flex items-center mb-5 ">
           <p className="mx-5 text-xl">近期祭典:</p>
-          <div className="flex">
-            <div className="border-2 border-black w-[200px] flex flex-col items-center p-5 m-5">
+          <div className="flex border-2 border-red-400 w-full justify-between ">
+            <div className="bg-yellow-300 rounded-sm  w-[400px] flex items-center justify-around p-5 ">
               <Image
                 src={matsuriData[0].picture}
-                width={150}
-                height={80}
-              ></Image>
-              <div className="mt-2">
+                width={200}
+                height={100}
+                objectFit="cover"
+                alt="event picture"
+              />
+              <div>
                 <p>{matsuriData[0].eventName}</p>
                 <p>{matsuriData[0].period}</p>
               </div>
             </div>
-            <div className="border-2 border-black w-[200px] flex flex-col items-center p-5 m-5">
+            <div className="bg-yellow-300 rounded-sm  w-[400px] flex items-center justify-around p-5 ">
               <Image
                 src={matsuriData[0].picture}
-                width={150}
-                height={80}
-              ></Image>
-              <div className="mt-2">
+                width={200}
+                height={100}
+                objectFit="cover"
+                alt="event picture"
+              />
+              <div>
                 <p>{matsuriData[0].eventName}</p>
                 <p>{matsuriData[0].period}</p>
               </div>
             </div>
-            <div className="border-2 border-black w-[200px] flex flex-col items-center p-5 m-5">
+            <div className="bg-yellow-300 rounded-sm  w-[400px] flex items-center justify-around p-5 ">
               <Image
                 src={matsuriData[0].picture}
-                width={150}
-                height={80}
-              ></Image>
-              <div className="mt-2">
+                width={200}
+                height={100}
+                objectFit="cover"
+                alt="event picture"
+              />
+              <div>
                 <p>{matsuriData[0].eventName}</p>
                 <p>{matsuriData[0].period}</p>
               </div>
