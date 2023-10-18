@@ -10,10 +10,6 @@ body, html {
   height: 100%;
 }
 
-.mainLayout {
-  width: 100vw;
-  min-height: 100vh;
-}
 
 .globalPadding {
 padding: 20px 150px;
