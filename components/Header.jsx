@@ -26,11 +26,9 @@ export default function Header() {
             <li className="hover:text-white">
               <Link href="/events">祭典一覽</Link>
             </li>
+
             <li className="hover:text-white">
-              <Link href="/">搜尋祭典</Link>
-            </li>
-            <li className="hover:text-white">
-              <Link href="/">提供情報</Link>
+              <Link href="/">關於本站</Link>
             </li>
           </ul>
 
@@ -57,11 +55,9 @@ export default function Header() {
               <li className="text-2xl text-black mb-5 hover:text-white">
                 <Link href="/events">祭典一覽</Link>
               </li>
+
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/">最近祭典</Link>
-              </li>
-              <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/">聯絡我們</Link>
+                <Link href="/">關於本站</Link>
               </li>
             </ul>
           </div>
