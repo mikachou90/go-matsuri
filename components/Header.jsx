@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 w-full flex justify-between items-center bg-yellow-400 globalPadding">
+      <header className="fixed top-0 w-full flex justify-between items-center bg-yellow-400 global-padding ">
         <Link href="/">
           <Image src="/logo-large-03.png" width="250" height="20" alt="logo" />
         </Link>

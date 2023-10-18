@@ -15,9 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="zh-TW">
       <body className={inter.className}>
-        <main>
+        <main className="flex flex-col h-screen justify-between">
           <Header />
-          {children}
+          <div className="mb-auto"> {children}</div>
+
           <Footer />
         </main>
       </body>
