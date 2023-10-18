@@ -1,4 +1,4 @@
-import matsuriData from "../../../data/dummyData";
+import matsuriData from "@/data/dummyData";
 import Image from "next/image";
 import Link from "next/link";
 
