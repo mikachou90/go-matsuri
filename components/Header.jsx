@@ -28,7 +28,7 @@ export default function Header() {
             </li>
 
             <li className="hover:text-white">
-              <Link href="/">關於本站</Link>
+              <Link href="/about">關於本站</Link>
             </li>
           </ul>
 
@@ -57,7 +57,7 @@ export default function Header() {
               </li>
 
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/">關於本站</Link>
+                <Link href="/about">關於本站</Link>
               </li>
             </ul>
           </div>
