@@ -13,7 +13,7 @@ const Card = () => {
             alt="event picture"
           />
         </div>
-        <div className="w-full py-2 flex flex-col items-center bg-white/50 absolute bottom-0 z-10 card-hover">
+        <div className="w-full py-2 flex flex-col items-center bg-white/50 absolute bottom-0 card-hover">
           <p>{matsuriData[0].eventName}</p>
           <p>{matsuriData[0].period}</p>
         </div>

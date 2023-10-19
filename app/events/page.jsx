@@ -7,10 +7,10 @@ const Events = () => {
     <div className="global-padding mt-20">
       <div>
         <h1 className="text-xl">祭典一覽</h1>
-        <button>Sort</button>
+        <button className="w-[50px] bg-black text-white">Sort</button>
       </div>
       <div>
-        <Card />
+        <div>{/* card component here */}</div>
       </div>
     </div>
   );

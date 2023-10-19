@@ -22,12 +22,13 @@ padding: 20px 250px;
 .card-wrapper {
   width: 300px;
   position: relative;
-  margin: 0 1rem
+  margin: 0 1rem;
 }
 
-.card-hover:hover {
-height: 100%;
-opacity: 0.9;
-font-weight: 700;
-justify-content: center;
+.card-wrapper:hover {
+  .card-hover{height: 100%;
+    opacity: 0.9;
+    font-weight: 700;
+    justify-content: center;}
+
 }

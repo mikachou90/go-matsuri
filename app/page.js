@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <div>
-        <div className="w-full mt-10 border-2 border-orange-500 hero-img ">
+        <div className="w-full mt-10 hero-img ">
           <div className="w-full h-full bg-black/60 flex flex-col items-center justify-center  ">
             <h1 className="font-bold text-white text-5xl">
               Make your journey even better!
@@ -18,10 +18,10 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full border-2 border-black global-padding flex flex-col items-center mb-10 ">
+        <div className="w-full flex flex-col items-center mb-10 ">
           <p className="text-2xl font-bold my-3">近期祭典:</p>
 
-          <div className="p-5 border-2 border-red-400 flex">
+          <div className="p-2 border-2 border-red-400 flex wrap">
             {/* event cards render here */}
             <Link href="/events/1">
               <Card />
