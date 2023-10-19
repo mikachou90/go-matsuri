@@ -1,6 +1,7 @@
 import matsuriData from "@/data/dummyData";
 import Image from "next/image";
-import Card from "@/components/card";
+import EventList from "@/components/EventList";
+import Link from "next/link";
 
 const Events = () => {
   return (
@@ -10,7 +11,17 @@ const Events = () => {
         <button className="w-[50px] bg-black text-white">Sort</button>
       </div>
       <div>
-        <div>{/* card component here */}</div>
+        <div>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+        </div>
       </div>
     </div>
   );
