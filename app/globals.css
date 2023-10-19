@@ -7,7 +7,6 @@ body, html {
   height: 100%;
 }
 
-
 .global-padding {
 padding: 20px 250px;
 }
@@ -20,8 +19,15 @@ padding: 20px 250px;
   object-fit: cover;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-column-gap: 50px;
+.card-wrapper {
+  width: 300px;
+  position: relative;
+  margin: 0 1rem
+}
+
+.card-hover:hover {
+height: 100%;
+opacity: 0.9;
+font-weight: 700;
+justify-content: center;
 }

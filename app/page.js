@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import matsuriData from "../data/dummyData";
+import Card from "@/components/card";
 
 export default function Home() {
   return (
@@ -20,52 +21,19 @@ export default function Home() {
         <div className="w-full border-2 border-black global-padding flex flex-col items-center mb-10 ">
           <p className="text-2xl font-bold my-3">近期祭典:</p>
 
-          <div className="cards-grid p-5 border-2 border-red-400 ">
+          <div className="p-5 border-2 border-red-400 flex">
             {/* event cards render here */}
-            <Link href="/events">
-              <div className="w-[300px] bg-stone-100 shadow-md flex flex-col items-center ">
-                <Image
-                  src={matsuriData[0].picture}
-                  width={300}
-                  height={100}
-                  objectFit="cover"
-                  alt="event picture"
-                />
-                <div className="flex flex-col items-center py-2">
-                  <p>{matsuriData[0].eventName}</p>
-                  <p>{matsuriData[0].period}</p>
-                </div>
-              </div>
+            <Link href="/events/1">
+              <Card />
             </Link>
-            <Link href="/events">
-              <div className="w-[300px] bg-stone-100 shadow-md flex flex-col items-center">
-                <Image
-                  src={matsuriData[0].picture}
-                  width={300}
-                  height={100}
-                  objectFit="cover"
-                  alt="event picture"
-                />
-                <div className="flex flex-col items-center py-2">
-                  <p>{matsuriData[0].eventName}</p>
-                  <p>{matsuriData[0].period}</p>
-                </div>
-              </div>
+            <Link href="/events/1">
+              <Card />
             </Link>
-            <Link href="/events">
-              <div className="w-[300px] bg-stone-100 shadow-md flex flex-col items-center">
-                <Image
-                  src={matsuriData[0].picture}
-                  width={300}
-                  height={100}
-                  objectFit="cover"
-                  alt="event picture"
-                />
-                <div className="flex flex-col items-center py-2">
-                  <p>{matsuriData[0].eventName}</p>
-                  <p>{matsuriData[0].period}</p>
-                </div>
-              </div>
+            <Link href="/events/1">
+              <Card />
+            </Link>
+            <Link href="/events/1">
+              <Card />
             </Link>
           </div>
         </div>
