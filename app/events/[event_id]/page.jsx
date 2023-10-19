@@ -2,6 +2,13 @@ import matsuriData from "@/data/dummyData";
 import Image from "next/image";
 import Link from "next/link";
 
+export function generateMetadata({ params }) {
+  return {
+    title: `Go Matsuri! | ${params.event_id}`,
+    description: "日本慶典情報",
+  };
+}
+
 const Event = ({ params }) => {
   const event_id = params.event_id;
   return (

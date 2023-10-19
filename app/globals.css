@@ -15,6 +15,7 @@ padding: 20px 250px;
 .hero-img {
   background-image: url('/heroImage.jpg');
   width:100%;
+  min-width: 1028px;
   height: 500px;
   object-fit: cover;
 }
