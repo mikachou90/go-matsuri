@@ -18,7 +18,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full flex flex-col items-center mb-10 ">
+        <div className="w-full flex flex-col items-center my-10 ">
           <p className="text-2xl font-bold my-3">近期祭典:</p>
 
           <div className="p-2 border-2 border-red-400 flex wrap">

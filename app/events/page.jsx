@@ -6,9 +6,24 @@ import Link from "next/link";
 const Events = () => {
   return (
     <div className="global-padding mt-20">
-      <div>
-        <h1 className="text-xl">祭典一覽</h1>
-        <button className="w-[50px] bg-black text-white">Sort</button>
+      <div className="mb-10">
+        <h1 className="text-3xl ">祭典一覽</h1>
+        <div className="mt-5 flex items-center">
+          <p className="mr-5">分類</p>
+          <div className="flex gap-5">
+            <div className="flex gap-2">
+              <button className="btn-seasons">春天</button>
+              <button className="btn-seasons">夏天</button>
+              <button className="btn-seasons">秋天</button>
+              <button className="btn-seasons">冬天</button>
+            </div>
+            <div className="flex gap-2">
+              <button className="btn-city">東京</button>
+              <button className="btn-city">大阪</button>
+              <button className="btn-city">北海道</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <div>

@@ -32,3 +32,19 @@ padding: 20px 250px;
     justify-content: center;}
 
 }
+
+.btn-seasons {
+  width: 65px;
+  padding: 5px;
+  background-color: rgb(239, 140, 19);
+  color: white;
+  border-radius: 10px;
+}
+
+.btn-city {
+  width: 65px;
+  padding: 5px;
+  background-color: rgb(19, 155, 239);
+  color: white;
+  border-radius: 10px;
+}
