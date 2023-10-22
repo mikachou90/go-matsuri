@@ -8,9 +8,12 @@ const Events = () => {
     <div className="global-padding mt-20">
       <div className="mb-10">
         <h1 className="text-3xl ">祭典一覽</h1>
-        <div className="mt-5 flex items-center">
+        <div
+          className="mt-5 flex
+        flex-col "
+        >
           <p className="mr-5">分類</p>
-          <div className="flex gap-5">
+          <div className="">
             <div className="flex gap-2">
               <button className="btn-seasons">春天</button>
               <button className="btn-seasons">夏天</button>
@@ -26,7 +29,25 @@ const Events = () => {
         </div>
       </div>
       <div>
-        <div>
+        <div className="grid grid-cols-1 gap-5">
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
+          <Link href="/events/1">
+            <EventList />
+          </Link>
           <Link href="/events/1">
             <EventList />
           </Link>
