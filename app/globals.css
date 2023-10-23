@@ -12,9 +12,17 @@ body, html {
 .hero-img {
   background-image: url('/heroImage.jpg');
   width:100%;
-  min-width: 1400px;
-  height: 500px;
+  min-width: 1200px;
+  height: 600px;
   object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    width: 100%;
+    min-width: 1400px;
+    height: 500px;
+  }
 }
 
 .card-wrapper {
