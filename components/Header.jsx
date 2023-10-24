@@ -13,14 +13,14 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 w-full flex justify-between items-center bg-yellow-400 global-padding ">
+      <header className="z-50 px-20 fixed top-0 w-full h-[60px] md:h-[70px] flex justify-between items-center bg-yellow-400 global-padding ">
         <Link href="/">
           <Image
             src="/logo-large-03.png"
             width="250"
             height="20"
             alt="logo"
-            className="lg:w-[250px]"
+            className="lg:w-[180px]"
           />
         </Link>
 
@@ -43,7 +43,7 @@ export default function Header() {
             onClick={handleMobileNav}
             className="block absolute right-20 align-middle lg:hidden z-10 "
           >
-            {nav ? <GrClose size={20} /> : <GrMenu size={20} />}
+            {nav ? <GrClose size={25} /> : <GrMenu size={25} />}
           </div>
 
           {/* mobile menu */}
