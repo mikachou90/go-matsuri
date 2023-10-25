@@ -1,9 +1,12 @@
-import matsuriData from "@/data/dummyData";
-import Image from "next/image";
 import EventList from "@/components/EventList";
 import Link from "next/link";
+import { getEvents } from "../../api/eventData";
 
-const Events = () => {
+const Events = async () => {
+  const eventData = await getEvents();
+
+  console.log("[events data]", eventData);
+
   return (
     <div className="py-10 px-20 mt-20">
       <div className="mb-10">
@@ -30,33 +33,18 @@ const Events = () => {
       </div>
       <div>
         <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
+          {eventData.map((data) => {
+            <Link href="/events/`${data.id}`">
+              <EventList
+                id={data.id}
+                picture={data.picture}
+                title={data.name}
+                period={data.period}
+                location={data.location}
+                feature={data.feature}
+              />
+            </Link>;
+          })}
         </div>
       </div>
     </div>
