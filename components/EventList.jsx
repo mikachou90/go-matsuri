@@ -10,7 +10,7 @@ const EventList = ({ data }) => {
         return (
           <div
             key={event.id}
-            className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center"
+            className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center p-2"
           >
             <Image
               src={event.picture || "/pic_missing.png"}
@@ -18,12 +18,12 @@ const EventList = ({ data }) => {
               height={80}
               alt="event picture"
             />
-            <div className="mt-5 flex flex-col items-center text-2xl">
-              <p>{event.name}</p>
-              <p>{event.location}</p>
-              <p>{event.period}</p>
+            <div className="mt-5 flex flex-col items-center">
+              <p className="text-xl font-bold text-center">{event.name}</p>
+              <p className="text-lg">{event.location}</p>
+              <p className="text-lg">{event.period}</p>
             </div>
-            <div className="text-xl flex bg-red-400 text-white mt-2">
+            <div className="text-sm p-2 rounded-lg flex bg-red-400 text-white mt-2">
               <p className="">{event.feature}</p>
             </div>
           </div>
