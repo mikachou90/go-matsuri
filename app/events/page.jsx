@@ -1,11 +1,10 @@
 import EventList from "@/components/EventList";
-import Link from "next/link";
-import { getEvents } from "@/api/eventData";
+import { getEvents } from "@/api/events/route";
 
 const Events = async () => {
   const eventData = await getEvents();
 
-  console.log("[events data]", eventData);
+  // console.log("[fetched data in events page]", eventData);
 
   return (
     <div className="py-10 px-20 mt-20">
@@ -34,20 +33,7 @@ const Events = async () => {
       </div>
       <div>
         <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          {eventData
-            ? eventData.map((data) => {
-                <Link key={data.id} href={`/events/${data.id}`}>
-                  <EventList
-                    id={data.id}
-                    picture={data.picture}
-                    title={data.name}
-                    period={data.period}
-                    location={data.location}
-                    feature={data.feature}
-                  />
-                </Link>;
-              })
-            : "Loading..."}
+          <EventList data={eventData} />
         </div>
       </div>
     </div>

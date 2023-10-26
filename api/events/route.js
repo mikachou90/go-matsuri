@@ -12,6 +12,7 @@ const api_URL =
 const formatData = (data) => {
   const rawArray = data.values;
   const keys = rawArray[0];
+
   const arrayData = rawArray.slice(1);
   const newArray = [];
 
@@ -29,7 +30,7 @@ const formatData = (data) => {
 // get events data
 export const getEvents = async () => {
   try {
-    const res = await fetch(api_URL);
+    const res = await fetch(api_URL, { next: { revalidate: 3600 } });
     const data = await res.json();
 
     return formatData(data);

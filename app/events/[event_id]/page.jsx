@@ -10,7 +10,6 @@ export function generateMetadata({ params }) {
 }
 
 const Event = ({ params }) => {
-  const event_id = params.event_id;
   return (
     <div className="mt-5">
       <div
