@@ -1,6 +1,7 @@
 import matsuriData from "@/data/dummyData";
 import Image from "next/image";
 import Link from "next/link";
+import { getEventDetail } from "@/api/events/route";
 
 export function generateMetadata({ params }) {
   return {
@@ -9,19 +10,20 @@ export function generateMetadata({ params }) {
   };
 }
 
-const Event = ({ params }) => {
+const Event = async ({ params }) => {
+  const data = await getEventDetail(params.event_id);
+  console.log("[data in eventDetil]", data);
+
   return (
     <div className="mt-5">
       <div
-        id={matsuriData.id}
+        id={data.id}
         className="w-full flex flex-col items-center pt-[100px] pb-[50px] px-4"
       >
-        <h1 className="font-bold text-2xl mb-5 lg:text-4xl ">
-          {matsuriData[0].eventName}
-        </h1>
+        <h1 className="font-bold text-2xl mb-5 lg:text-4xl ">{data.name}</h1>
         <div className="px-5 xl:flex xl:mt-5">
           <Image
-            src={matsuriData[0].picture}
+            src={data.picture || "/pic_missing.png"}
             width={400}
             height={300}
             alt="event picture"
@@ -29,27 +31,23 @@ const Event = ({ params }) => {
           />
           <div className="w-[400px] mt-[30px] md:w-[600px] lg:w-[800px] xl:ml-10">
             <p className="font-bold text-lg md:text-xl lg:text-2xl  ">
-              名稱: {matsuriData[0].eventName}
+              名稱: {data.name}
             </p>
             <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              舉辦期間: {matsuriData[0].period}
+              舉辦期間: {data.period}
             </p>
             <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              地點: {matsuriData[0].location}
+              地點: {data.location}
             </p>
             <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              交通: {matsuriData[0].transportation[0].line}
-              &nbsp;
-              {matsuriData[0].transportation[0].station}
-              &nbsp;
-              {matsuriData[0].transportation[0].route}
+              交通: {data.station}
             </p>
             <p className="font-bold text-lg text-amber-600 md:text-xl lg:text-2xl">
-              <Link href={matsuriData[0].webLink}>相關連結</Link>
+              <Link href={data.link}>相關連結</Link>
             </p>
             <br />
             <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              簡介: {matsuriData[0].description}
+              簡介: {data.description}
             </p>
             <br />
             <p className="text-gray-400 lg:text-lg">
