@@ -1,13 +1,16 @@
-import matsuriData from "@/data/dummyData";
-import Image from "next/image";
 import EventList from "@/components/EventList";
-import Link from "next/link";
+import { getEvents } from "@/api/events/route";
 
-const Events = () => {
+const Events = async () => {
+  const eventData = await getEvents();
+
+  // console.log("[fetched data in events page]", eventData);
+
   return (
     <div className="py-10 px-20 mt-20">
       <div className="mb-10">
         <h1 className="text-3xl font-bold">祭典一覽</h1>
+
         <div
           className="mt-5 flex
         flex-col "
@@ -30,33 +33,7 @@ const Events = () => {
       </div>
       <div>
         <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
-          <Link href="/events/1">
-            <EventList />
-          </Link>
+          <EventList data={eventData} />
         </div>
       </div>
     </div>
