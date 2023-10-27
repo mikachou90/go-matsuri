@@ -8,16 +8,17 @@ export default async function Home() {
   const events = await getEvents();
   const currentMonth = new Date().getMonth();
   const seasonMap = [
+    "winter",
+    "winter",
     "spring",
     "spring",
     "spring",
     "summer",
     "summer",
+    "summer",
     "autumn",
     "autumn",
     "autumn",
-    "winter",
-    "winter",
     "winter",
   ];
   const targetSeason = seasonMap[currentMonth];
