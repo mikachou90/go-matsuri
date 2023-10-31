@@ -39,3 +39,16 @@ export const getEvents = async () => {
     throw error;
   }
 };
+
+// get event detail
+export const getEventDetail = async (id) => {
+  try {
+    const res = await fetch(api_URL, { next: { revalidate: 3600 } });
+    const data = await res.json();
+    const formatedData = formatData(data);
+    return formatedData.find((row) => row.id === id);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

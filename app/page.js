@@ -1,9 +1,29 @@
-import Image from "next/image";
-import Link from "next/link";
-import matsuriData from "../data/dummyData";
-import Card from "@/components/card";
+import Card from "@/components/Card";
+import { getEvents } from "@/api/events/route";
 
-export default function Home() {
+export default async function Home() {
+  const events = await getEvents();
+  const currentMonth = new Date().getMonth();
+  const seasonMap = [
+    "winter",
+    "winter",
+    "spring",
+    "spring",
+    "spring",
+    "summer",
+    "summer",
+    "summer",
+    "autumn",
+    "autumn",
+    "autumn",
+    "winter",
+  ];
+  const targetSeason = seasonMap[currentMonth];
+
+  const filteredData = events
+    .filter((item) => item.seasons.toUpperCase() === targetSeason.toUpperCase())
+    .slice(0, 4);
+
   return (
     <div>
       <div>
@@ -24,19 +44,7 @@ export default function Home() {
           </p>
 
           <div className="p-4 grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:gap-8 xl:grid-rows-1">
-            {/* event cards render here */}
-            <Link href="/events/1">
-              <Card className="" />
-            </Link>
-            <Link href="/events/1">
-              <Card />
-            </Link>
-            <Link href="/events/1">
-              <Card />
-            </Link>
-            <Link href="/events/1">
-              <Card />
-            </Link>
+            <Card data={filteredData} />
           </div>
         </div>
       </div>
