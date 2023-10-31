@@ -1,4 +1,3 @@
-import matsuriData from "@/data/dummyData";
 import Image from "next/image";
 import Link from "next/link";
 import { getEventDetail } from "@/api/events/route";

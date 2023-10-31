@@ -1,7 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import matsuriData from "../data/dummyData";
-import Card from "@/components/card";
+import Card from "@/components/Card";
 import { getEvents } from "@/api/events/route";
 
 export default async function Home() {
