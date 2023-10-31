@@ -1,10 +1,20 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const EventList = ({ data }) => {
-  console.log("[data in components]", data);
+  const [filteredData, setFilteredData] = useState(data);
+
+  const filterDataByKeyword = (keyword, category) => {
+    const filteredEvent = data.filter((event) =>
+      category === "seasons"
+        ? event.seasons.includes(keyword)
+        : event.city.includes(keyword)
+    );
+    setFilteredData(filteredEvent);
+  };
+
   return (
     <div className="py-10 px-20 mt-20">
       <div className="mb-10">
@@ -17,22 +27,57 @@ const EventList = ({ data }) => {
           <p className="text-2xl mb-2">快速篩選</p>
           <div>
             <div className="mb-2 flex gap-4">
-              <button className="btn-seasons">春天</button>
-              <button className="btn-seasons">夏天</button>
-              <button className="btn-seasons">秋天</button>
-              <button className="btn-seasons">冬天</button>
+              <button
+                className="btn-seasons"
+                onClick={() => filterDataByKeyword("Spring", "seasons")}
+              >
+                春天
+              </button>
+              <button
+                className="btn-seasons"
+                onClick={() => filterDataByKeyword("Summer", "seasons")}
+              >
+                夏天
+              </button>
+              <button
+                className="btn-seasons"
+                onClick={() => filterDataByKeyword("Autumn", "seasons")}
+              >
+                秋天
+              </button>
+              <button
+                className="btn-seasons"
+                onClick={() => filterDataByKeyword("Winter", "seasons")}
+              >
+                冬天
+              </button>
             </div>
             <div className="flex gap-4">
-              <button className="btn-city">東京</button>
-              <button className="btn-city">大阪</button>
-              <button className="btn-city">北海道</button>
+              <button
+                className="btn-city"
+                onClick={() => filterDataByKeyword("Tokyo", "city")}
+              >
+                東京
+              </button>
+              <button
+                className="btn-city"
+                onClick={() => filterDataByKeyword("Osaka", "city")}
+              >
+                大阪
+              </button>
+              <button
+                className="btn-city"
+                onClick={() => filterDataByKeyword("Hokkaido", "city")}
+              >
+                北海道
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div>
         <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          {data.map((event) => {
+          {filteredData.map((event) => {
             return (
               <li key={event.id} className="list-none">
                 <Link href={`/events/${event.id}`}>
