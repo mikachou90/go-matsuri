@@ -5,23 +5,23 @@ export default async function Home() {
   const events = await getEvents();
   const currentMonth = new Date().getMonth();
   const seasonMap = [
-    "winter",
-    "winter",
-    "spring",
-    "spring",
-    "spring",
-    "summer",
-    "summer",
-    "summer",
-    "autumn",
-    "autumn",
-    "autumn",
-    "winter",
+    "冬天",
+    "冬天",
+    "春天",
+    "春天",
+    "春天",
+    "夏天",
+    "夏天",
+    "夏天",
+    "秋天",
+    "秋天",
+    "秋天",
+    "冬天",
   ];
   const targetSeason = seasonMap[currentMonth];
 
   const filteredData = events
-    .filter((item) => item.seasons.toUpperCase() === targetSeason.toUpperCase())
+    .filter((item) => item.seasons === targetSeason)
     .slice(0, 4);
 
   return (

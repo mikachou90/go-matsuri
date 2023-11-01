@@ -30,7 +30,8 @@ const formatData = (data) => {
 // get events data
 export const getEvents = async () => {
   try {
-    const res = await fetch(api_URL, { next: { revalidate: 3600 } });
+    const res = await fetch(api_URL, { next: { revalidate: 1800 } });
+    // const res = await fetch(api_URL, { cache: "no-store" });
     const data = await res.json();
 
     return formatData(data);
