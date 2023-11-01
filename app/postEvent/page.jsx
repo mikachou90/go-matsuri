@@ -4,9 +4,9 @@ const PostEvent = () => {
   return (
     <div className="py-10 px-20 mt-20">
       <div>
-        <p className="text-3xl font-bold mb-10 ">慶典情報新增</p>
+        <p className="text-3xl font-bold mb-10 ">祭典情報新增</p>
         <p className="font-bold mb-5 text-xl">
-          若你有最新的日本慶典情報，歡迎分享給我們!
+          若你有最新的日本祭典情報，歡迎分享給我們!
         </p>
         <form
           action=""
@@ -14,7 +14,7 @@ const PostEvent = () => {
           className="w-[250px] h-800 grid text-lg gap-4 sm:[500px] md:w-[700px] md:grid-cols-2 lg:w-[1000px] "
         >
           <label for="city" className="md:mb-4">
-            城市:
+            舉辦城市:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
@@ -32,7 +32,7 @@ const PostEvent = () => {
             />
           </label>
           <label for="name" className="md:mb-4">
-            慶典名稱:
+            祭典名稱:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
@@ -59,7 +59,7 @@ const PostEvent = () => {
             />
           </label>
           <label for="picture" className="md:mb-4">
-            慶典照片:
+            祭典照片:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
@@ -73,7 +73,7 @@ const PostEvent = () => {
             </p>
           </label>
           <label for="feature" className="md:mb-4">
-            慶典特色:
+            祭典特色:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
