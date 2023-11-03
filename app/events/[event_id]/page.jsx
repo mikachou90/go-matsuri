@@ -18,34 +18,38 @@ const Event = async ({ params }) => {
         id={data.id}
         className="w-full flex flex-col items-center pt-[100px] pb-[50px] px-4"
       >
-        <h1 className="font-bold text-2xl mb-5 lg:text-4xl ">{data.name}</h1>
+        <h1 className="font-bold text-xl mb-5 md:text-2xl lg:text-3xl ">
+          {data.name}
+        </h1>
+        <div className="mb-5 flex gap-4 text-lg font-bold md:text-xl">
+          <div className="w-[80px] text-white bg-red-400 flex justify-center p-1 rounded-lg ">
+            <p className="truncate">{data.feature}</p>
+          </div>
+          <div className="w-[80px]  text-white bg-cyan-600 flex justify-center p-1 rounded-lg ">
+            <p>{data.city}</p>
+          </div>
+        </div>
+
         <div className="px-5 flex flex-col items-center  xl:flex-row xl:mt-5">
           <Image
             src={data.picture || "/pic_missing.png"}
             width={300}
             height={300}
             alt="event picture"
-            className="md:w-[500px] lg:w-[600px]"
+            className="sm:w-[500px] lg:w-[600]"
           />
-          <div className="w-[400px] mt-[30px] md:w-[600px] lg:w-[800px] xl:ml-10">
-            <p className="font-bold text-lg md:text-xl lg:text-2xl  ">
-              名稱: {data.name}
-            </p>
-            <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              舉辦期間: {data.period}
-            </p>
-            <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              地點: {data.location}
-            </p>
-            <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              交通: {data.station}
-            </p>
-            <p className="font-bold text-lg text-amber-600 md:text-xl lg:text-2xl">
+          <div className="w-[300px] mt-[30px] font-bold text-lg sm:w-[500px] sm:text-xl lg:w-[600px] xl:ml-10">
+            <p>名稱: {data.name}</p>
+            <p>舉辦期間: {data.period}</p>
+            <p>地點: {data.location}</p>
+            <p>交通: {data.station}</p>
+            <p className=" text-amber-600 ">
               <Link href={data.link}>相關連結</Link>
             </p>
             <br />
-            <p className="font-bold text-lg md:text-xl lg:text-2xl">
-              簡介: {data.description}
+            <p>
+              簡介:
+              <br /> {data.description}
             </p>
             <br />
             <p className="text-gray-400 lg:text-lg">

@@ -13,25 +13,37 @@ const PostEvent = () => {
           method="post"
           className="w-[250px] h-800 grid text-lg gap-4 sm:[500px] md:w-[700px] md:grid-cols-2 lg:w-[1000px] "
         >
-          <label for="city" className="md:mb-4">
+          <label htmlFor="city" className="md:mb-4">
             舉辦城市:
-            <input
-              className="bg-yellow-500 rounded-md text-white w-full h-8"
-              type="text"
-              id="city"
-              name="city"
-            />
-          </label>
-          <label for="seasons" className="md:mb-4">
-            舉辦季節:
-            <input
+            <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
               id="seasons"
               name="seasons"
-            />
+            >
+              <option>城市</option>
+              <option>東京</option>
+              <option>大阪</option>
+              <option>北海道</option>
+              <option>其他</option>
+            </select>
           </label>
-          <label for="name" className="md:mb-4">
+          <label htmlFor="seasons" className="md:mb-4">
+            舉辦季節:
+            <select
+              className="bg-yellow-500 rounded-md text-white w-full h-8"
+              type="text"
+              id="seasons"
+              name="seasons"
+            >
+              <option>請選擇</option>
+              <option>春天</option>
+              <option>夏天</option>
+              <option>秋天</option>
+              <option>冬天</option>
+            </select>
+          </label>
+          <label htmlFor="name" className="md:mb-4">
             祭典名稱:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -40,7 +52,7 @@ const PostEvent = () => {
               name="name"
             />
           </label>
-          <label for="period" className="md:mb-4">
+          <label htmlFor="period" className="md:mb-4">
             舉辦月份:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -49,7 +61,7 @@ const PostEvent = () => {
               name="period"
             />
           </label>
-          <label for="location" className="md:mb-4">
+          <label htmlFor="location" className="md:mb-4">
             舉辦地點:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -58,7 +70,7 @@ const PostEvent = () => {
               name="location"
             />
           </label>
-          <label for="picture" className="md:mb-4">
+          <label htmlFor="picture" className="md:mb-4">
             祭典照片:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -72,19 +84,28 @@ const PostEvent = () => {
               若沒有照片可省略。
             </p>
           </label>
-          <label for="feature" className="md:mb-4">
+          <label htmlFor="feature" className="md:mb-4">
             祭典特色:
-            <input
+            <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
-              id="feature"
-              name="feature"
-            />
-            <p className="text-sm text-gray-500 ">
-              例如:賞花、煙火大會、神社祭典等。
-            </p>
+              id="seasons"
+              name="seasons"
+            >
+              <option>請選擇</option>
+              <option>賞花</option>
+              <option>夜間賞花</option>
+              <option>賞楓</option>
+              <option>煙火大會</option>
+              <option>神社祭典</option>
+              <option>夏日祭典</option>
+              <option>點燈活動</option>
+              <option>聖誕活動</option>
+              <option>其他</option>
+            </select>
           </label>
-          <label for="station" className="md:mb-4">
+
+          <label htmlFor="station" className="md:mb-4">
             交通:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -94,7 +115,7 @@ const PostEvent = () => {
             />
             <p className="text-sm text-gray-500 ">請提供鄰近的車站與路線名。</p>
           </label>
-          <label for="link" className="md:mb-4">
+          <label htmlFor="link" className="md:mb-4">
             官方連結:
             <input
               className="bg-yellow-500 rounded-md text-white w-full h-8"
@@ -103,22 +124,24 @@ const PostEvent = () => {
               name="link"
             />
           </label>
-          <label for="description" className="md:mb-4">
-            簡述:
-            <input
-              className="bg-yellow-500 rounded-md text-white w-full h-8"
-              type="text"
-              id="description"
-              name="description"
-            />
-          </label>
+          <div>
+            <label htmlFor="description" className="md:mb-4">
+              簡述:
+              <textarea
+                className="bg-yellow-500 rounded-md text-white w-full h-[80px] resize-none"
+                type="text"
+                id="description"
+                name="description"
+              />
+            </label>
+          </div>
+          <button
+            className="mt-10 w-40 h-10 rounded-lg bg-yellow-500 text-white font-bold text-lg"
+            type="submit"
+          >
+            確認送出
+          </button>
         </form>
-        <button
-          className="mt-10 w-40 h-10 rounded-lg bg-yellow-500 text-white font-bold text-lg"
-          type="submit"
-        >
-          確認送出
-        </button>
       </div>
     </div>
   );
