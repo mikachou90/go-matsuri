@@ -1,8 +1,8 @@
 import EventList from "@/components/EventList";
-import { getEvents } from "@/api/events/route";
+import { doGet } from "@/api/googleScriptApi/route";
 
 const Events = async () => {
-  const data = await getEvents();
+  const data = await doGet();
   console.log("[fetched data in events page]", data);
 
   return (

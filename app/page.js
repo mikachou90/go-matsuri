@@ -1,8 +1,8 @@
 import Card from "@/components/Card";
-import { getEvents } from "@/api/events/route";
+import { doGet } from "@/api/googleScriptApi/route";
 
 export default async function Home() {
-  const events = await getEvents();
+  const events = await doGet();
   const currentMonth = new Date().getMonth();
   const seasonMap = [
     "冬天",

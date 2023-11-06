@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getEventDetail } from "@/api/events/route";
+import { doGetDetail } from "@/api/googleScriptApi/route";
 
 export function generateMetadata({ params }) {
   return {
@@ -10,7 +10,7 @@ export function generateMetadata({ params }) {
 }
 
 const Event = async ({ params }) => {
-  const data = await getEventDetail(params.event_id);
+  const data = await doGetDetail(params.event_id);
 
   return (
     <div className="mt-5">
