@@ -115,11 +115,16 @@ const EventList = ({ data }) => {
                         <p className="text-xl font-bold text-center">
                           {event.name}
                         </p>
-                        <p className="text-lg">{event.location}</p>
+
                         <p className="text-lg">{event.period}</p>
                       </div>
-                      <div className="text-sm p-2 rounded-lg flex bg-red-400 text-white mt-2">
-                        <p className="">{event.feature}</p>
+                      <div className="flex gap-2">
+                        <div className="text-sm p-2 rounded-lg flex bg-red-400 text-white mt-2">
+                          <p className="">{event.feature}</p>
+                        </div>
+                        <div className="text-sm p-2 rounded-lg flex bg-cyan-500 text-white mt-2">
+                          <p>{event.city}</p>
+                        </div>
                       </div>
                     </div>
                   </Link>
