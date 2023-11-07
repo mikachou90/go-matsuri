@@ -1,6 +1,44 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
 const PostEvent = () => {
+  const [formData, setFormData] = useState({
+    city: "",
+    seasons: "",
+    name: "",
+    period: "",
+    location: "",
+    picture: "",
+    feature: "",
+    station: "",
+    link: "",
+    description: "",
+  });
+
+  // console.log("[formData]", formData);
+
+  const handleFormSubmit = async (event) => {
+    // console.log("[event in handleSubmmit]", event);
+    event.preventDefault();
+    try {
+      //fixing post api
+      // const response = await doPostEvent(formData);
+      console.log("[formData in handleSubmit]", formData);
+      console.log("API Response:", response);
+      return response;
+    } catch (error) {
+      console.error("API Error:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="py-10 px-20 mt-20">
       <div>
@@ -9,7 +47,7 @@ const PostEvent = () => {
           若你有最新的日本祭典情報，歡迎分享給我們!
         </p>
         <form
-          action=""
+          onSubmit={handleFormSubmit}
           method="post"
           className="w-[250px] h-800 grid text-lg gap-4 sm:[500px] md:w-[700px] md:grid-cols-2 lg:w-[1000px] "
         >
@@ -18,8 +56,9 @@ const PostEvent = () => {
             <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
-              id="seasons"
-              name="seasons"
+              id="city"
+              name="city"
+              onChange={handleInputChange}
             >
               <option>城市</option>
               <option>東京</option>
@@ -35,6 +74,7 @@ const PostEvent = () => {
               type="text"
               id="seasons"
               name="seasons"
+              onChange={handleInputChange}
             >
               <option>請選擇</option>
               <option>春天</option>
@@ -50,6 +90,7 @@ const PostEvent = () => {
               type="text"
               id="name"
               name="name"
+              onChange={handleInputChange}
             />
           </label>
           <label htmlFor="period" className="md:mb-4">
@@ -59,6 +100,7 @@ const PostEvent = () => {
               type="text"
               id="period"
               name="period"
+              onChange={handleInputChange}
             />
           </label>
           <label htmlFor="location" className="md:mb-4">
@@ -68,6 +110,7 @@ const PostEvent = () => {
               type="text"
               id="location"
               name="location"
+              onChange={handleInputChange}
             />
           </label>
           <label htmlFor="picture" className="md:mb-4">
@@ -77,6 +120,7 @@ const PostEvent = () => {
               type="text"
               id="picture"
               name="picture"
+              onChange={handleInputChange}
             />
             <p className="text-sm text-gray-500 ">
               提供的照片需為提供者擁有權或網路上免費使用的照片。
@@ -89,8 +133,9 @@ const PostEvent = () => {
             <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
-              id="seasons"
-              name="seasons"
+              id="feature"
+              name="feature"
+              onChange={handleInputChange}
             >
               <option>請選擇</option>
               <option>賞花</option>
@@ -112,6 +157,7 @@ const PostEvent = () => {
               type="text"
               id="station"
               name="station"
+              onChange={handleInputChange}
             />
             <p className="text-sm text-gray-500 ">請提供鄰近的車站與路線名。</p>
           </label>
@@ -122,6 +168,7 @@ const PostEvent = () => {
               type="text"
               id="link"
               name="link"
+              onChange={handleInputChange}
             />
           </label>
           <div>
@@ -132,6 +179,7 @@ const PostEvent = () => {
                 type="text"
                 id="description"
                 name="description"
+                onChange={handleInputChange}
               />
             </label>
           </div>
