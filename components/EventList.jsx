@@ -2,9 +2,23 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { db } from "@/utils/firebaseInit";
+import { ref, onValue } from "firebase/database";
 
-const EventList = ({ data }) => {
-  const [filteredData, setFilteredData] = useState(data);
+const EventList = () => {
+  const dbRef = ref(db);
+  const eventData = onValue(
+    dbRef,
+    (snapshot) => {
+      console.log(snapshot.val());
+    },
+    {
+      onlyOnce: true,
+    }
+  );
+
+  console.log("[am i data?]", eventData);
+  const [filteredData, setFilteredData] = useState();
   const [activeData, setActiveData] = useState("");
 
   const filterDataByKeyword = (keyword, category) => {
@@ -96,7 +110,7 @@ const EventList = ({ data }) => {
       </div>
       <div>
         <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          {filteredData.length > 0 ? (
+          {filteredData?.length > 0 ? (
             filteredData.map((event) => {
               return (
                 <li key={event.id} className="list-none">

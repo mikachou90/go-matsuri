@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { ref, child, push, update } from "firebase/database";
+import { db } from "@/utils/firebaseInit";
 
 const PostEvent = () => {
   const [formData, setFormData] = useState({
@@ -15,19 +17,26 @@ const PostEvent = () => {
     description: "",
   });
 
-  // console.log("[formData]", formData);
-
   const handleFormSubmit = async (event) => {
-    // console.log("[event in handleSubmmit]", event);
     event.preventDefault();
     try {
-      //fixing post api
-      // const response = await doPostEvent(formData);
-      console.log("[formData in handleSubmit]", formData);
-      console.log("API Response:", response);
-      return response;
+      const newKey = push(child(ref(db), "event")).key;
+      await update(ref(db), {
+        ["event/" + newKey]: {
+          city: formData.city,
+          seasons: formData.seasons,
+          name: formData.name,
+          period: formData.period,
+          location: formData.location,
+          picture: formData.picture,
+          feature: formData.feature,
+          station: formData.station,
+          link: formData.link,
+          description: formData.description,
+        },
+      });
     } catch (error) {
-      console.error("API Error:", error);
+      console.error("Post new Event error:", error);
     }
   };
 
