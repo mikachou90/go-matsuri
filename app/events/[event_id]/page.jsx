@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { db } from "@/utils/firebaseInit";
 import { ref, onValue } from "firebase/database";
+import Link from "next/link";
 
 const Event = ({ params }) => {
   const eventId = params.event_id;
@@ -43,10 +44,10 @@ const Event = ({ params }) => {
           {data.name}
         </h1>
         <div className="mb-5 flex gap-4 text-lg font-bold md:text-xl">
-          <div className="w-[80px] text-white bg-red-400 flex justify-center p-1 rounded-lg ">
+          <div className="w-[100px] text-white bg-red-400 flex justify-center p-1 rounded-lg ">
             <p className="truncate">{data.feature}</p>
           </div>
-          <div className="w-[80px]  text-white bg-cyan-600 flex justify-center p-1 rounded-lg ">
+          <div className="w-[100px]  text-white bg-lime-500  flex justify-center p-1 rounded-lg ">
             <p>{data.city}</p>
           </div>
         </div>
@@ -65,7 +66,7 @@ const Event = ({ params }) => {
             <p>地點: {data.location}</p>
             <p>交通: {data.station}</p>
             <p className=" text-amber-600 ">
-              {/* <Link href={data.link}>相關連結</Link> */}
+              <Link href={data.link || ""}>相關連結</Link>
             </p>
             <br />
             <p>

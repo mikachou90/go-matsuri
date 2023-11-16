@@ -89,13 +89,13 @@ const EventList = () => {
         flex-col "
         >
           <div className="text-2xl mb-5 flex items-center">快速篩選</div>
-          <div className=" flex flex-col sm:flex-row sm:justify-between ">
+          <div className="flex flex-col sm:flex-row sm:justify-between">
             <div>
-              <div className="mb-2 flex gap-4">
+              <div className="mb-2 grid grid-cols-3 gap-3  sm:grid-cols-4 lg:gap-3">
                 {seasons.map((season) => (
                   <button
                     key={season}
-                    className={`w-[85px] h-[45px] btn border-2 border-amber-500 hover:bg-amber-500 hover:text-white ${
+                    className={`btn border-2 border-amber-500 hover:bg-amber-500 hover:text-white ${
                       currentParams.season === season ? "activeSeasonBtn" : ""
                     }`}
                     onClick={() =>
@@ -106,11 +106,11 @@ const EventList = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex gap-4 mb-2">
+              <div className="grid grid-cols-3 gap-1 grid-rows-3 mb-2 sm:grid-cols-4 sm:gird-rows-2 lg:grid-rows-1 lg:grid-cols-6 lg:gap-3">
                 {cities.map((city) => (
                   <button
                     key={city}
-                    className={`w-[85px] h-[45px] btn hover:bg-lime-500 hover:text-white border-2 border-lime-500 ${
+                    className={` btn hover:bg-lime-500 hover:text-white border-2 border-lime-500 ${
                       currentParams.city === city ? "activeCityBtn" : ""
                     }`}
                     onClick={() =>
