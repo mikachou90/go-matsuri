@@ -1,11 +1,65 @@
-import matsuriData from "@/data/dummyData";
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { db } from "@/utils/firebaseInit";
+import { ref, onValue } from "firebase/database";
 
-const Card = ({ data }) => {
+const Card = () => {
+  const [eventsData, setEventsData] = useState({});
+
+  // make id = key and transfer data to array
+  const eventsArray = Object.keys(eventsData).map((eventKey) => {
+    return {
+      ...eventsData[eventKey],
+      id: eventKey,
+    };
+  });
+
+  console.log({ eventsArray });
+
+  useEffect(() => {
+    const eventsRef = ref(db);
+    onValue(
+      eventsRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        setEventsData(data.events);
+      },
+      {
+        onlyOnce: true,
+      }
+    );
+  }, []);
+
+  console.log({ eventsData });
+
+  const currentMonth = new Date().getMonth();
+  const seasonMap = [
+    "winter",
+    "winter",
+    "spring",
+    "spring",
+    "spring",
+    "summer",
+    "summer",
+    "summer",
+    "autumn",
+    "autumn",
+    "autumn",
+    "winter",
+  ];
+  const targetSeason = seasonMap[currentMonth];
+
+  const filteredData = eventsArray
+    .filter((item) => item.season === targetSeason)
+    .slice(0, 4);
+
+  console.log({ filteredData });
+
   return (
     <>
-      {data.map((event) => {
+      {filteredData?.map((event) => {
         return (
           <li key={event.id} className="list-none">
             <Link href={`/events/${event.id}`}>

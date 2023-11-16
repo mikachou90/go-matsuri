@@ -36,21 +36,13 @@ height: 400px;
 
 }
 
-.btn-seasons {
-  width: 55px;
+.btn {
   font-size:18px;
-  padding: 2px;
-  color: black;
-  border-radius: 10px;
-}
-
-.btn-city {
-  width: 65px;
-  font-size: 18px;
   padding: 3px;
   color: black;
   border-radius: 10px;
 }
+
 
 .activeSeasonBtn {
   background-color: rgb(245 158 11);
@@ -62,4 +54,16 @@ height: 400px;
 background-color: rgb(132 204 22);
 color: white;
 font-weight: 700;
+}
+
+.tag {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  background-color: rgb(121, 121, 121);
+  top: 0px;
+  right: 15px;
+ font-size: 16px;
+ color:white;
+
 }

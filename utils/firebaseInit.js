@@ -1,23 +1,40 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// export const createFirebaseApp = () => {
+//   const clientCredentials = {
+//     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+//     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+//     databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+//     projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+//     storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+//     messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+//     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+//     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+//   };
+
+//   const app = initializeApp(clientCredentials);
+//   return app;
+// };
+
+// export const getFireBaseDatabase = () => {
+//   const app = createFirebaseApp();
+//   const db = getDatabase(app);
+//   return db;
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA-05vA4bSRAtbSPvcL8K1FymWT1QrHHvA",
-  authDomain: "gomatsuri.firebaseapp.com",
-  databaseURL:
-    "https://gomatsuri-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "gomatsuri",
-  storageBucket: "gomatsuri.appspot.com",
-  messagingSenderId: "488161588646",
-  appId: "1:488161588646:web:6c38f59a6973833523cb67",
-  measurementId: "G-GCW16SNKBD",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-export { db, app };
+export { db };
