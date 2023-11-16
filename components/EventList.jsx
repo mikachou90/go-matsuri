@@ -25,6 +25,7 @@ const EventList = () => {
     };
   });
 
+  // render buttons
   const seasons = eventsArray
     .map(({ season }) => season)
     .filter(
@@ -51,13 +52,7 @@ const EventList = () => {
     );
   }, []);
 
-  // control btn style
-  // const seasons = ["spring", "summer", "autumn", "winter", "spring"];
-  // const city = ["Tokyo", "Osaka", "Hokkaido", "Others"];
-
-  // const [activeSeasonBtn, setActiveSeasonBtn] = useState("");
-  // const [activeCityBtn, setActiveCityBtn] = useState("");
-
+  //buttons function
   const handleButtonClick = ({ season, city, clear } = {}) => {
     if (clear) {
       //clean all
