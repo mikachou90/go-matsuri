@@ -1,21 +1,83 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { db } from "@/utils/firebaseInit";
+import { ref, onValue } from "firebase/database";
 
-const EventList = ({ data }) => {
-  const [filteredData, setFilteredData] = useState(data);
-  const [activeData, setActiveData] = useState("");
+const EventList = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const filterDataByKeyword = (keyword, category) => {
-    const filteredEvent = data.filter((event) =>
-      category === "seasons"
-        ? event.seasons.includes(keyword)
-        : event.city.includes(keyword)
-    );
-    setFilteredData(filteredEvent);
-    setActiveData(keyword);
+  const currentParams = {
+    season: searchParams.get("season"),
+    city: searchParams.get("city"),
   };
+
+  // get all data from firebase
+  const [eventsData, setEventsData] = useState({});
+  // make id = key and transfer data to array
+  const eventsArray = Object.keys(eventsData).map((eventKey) => {
+    return {
+      ...eventsData[eventKey],
+      id: eventKey,
+    };
+  });
+
+  // render buttons
+  const seasons = eventsArray
+    .map(({ season }) => season)
+    .filter(
+      (season, index, currentArray) => currentArray.indexOf(season) === index
+    );
+
+  const cities = eventsArray
+    .map(({ city }) => city)
+    .filter(
+      (city, index, currentArray) => currentArray.indexOf(city) === index
+    );
+
+  useEffect(() => {
+    const eventsRef = ref(db);
+    onValue(
+      eventsRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        setEventsData(data.events);
+      },
+      {
+        onlyOnce: true,
+      }
+    );
+  }, []);
+
+  //buttons function
+  const handleButtonClick = ({ season, city, clear } = {}) => {
+    if (clear) {
+      //clean all
+      return router.push(`/events`);
+    }
+
+    const searchParams = new URLSearchParams();
+
+    if (season) {
+      searchParams.append("season", season);
+    }
+    if (city) {
+      searchParams.append("city", city);
+    }
+
+    return router.push(`/events?${searchParams.toString()}`);
+  };
+
+  // filter data
+  const filteredData = eventsArray?.filter((event) => {
+    const seasonMatch =
+      !currentParams.season || event.season === currentParams.season;
+    const cityMatch = !currentParams.city || event.city === currentParams.city;
+    return seasonMatch && cityMatch;
+  });
 
   return (
     <div className="py-10 px-20 mt-20">
@@ -26,85 +88,65 @@ const EventList = ({ data }) => {
           className="mt-5 flex
         flex-col "
         >
-          <div className="text-2xl mb-5 flex items-center">
-            快速篩選&nbsp;
-            <p className=" text-3xl font-bold p-2 rounded-lg">{activeData}</p>
-          </div>
-          <div>
-            <div className="mb-2 flex gap-4">
-              <button
-                className={`btn-seasons border-2 border-amber-500 ${
-                  activeData === "春天" ? "activeSeasonBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("春天", "seasons")}
-              >
-                春天
-              </button>
-              <button
-                className={`btn-seasons border-2 border-amber-500 ${
-                  activeData === "夏天" ? "activeSeasonBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("夏天", "seasons")}
-              >
-                夏天
-              </button>
-              <button
-                className={`btn-seasons border-2 border-amber-500 ${
-                  activeData === "秋天" ? "activeSeasonBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("秋天", "seasons")}
-              >
-                秋天
-              </button>
-              <button
-                className={`btn-seasons border-2 border-amber-500 ${
-                  activeData === "冬天" ? "activeSeasonBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("冬天", "seasons")}
-              >
-                冬天
-              </button>
+          <div className="text-2xl mb-5 flex items-center">快速篩選</div>
+          <div className=" flex flex-col sm:flex-row sm:justify-between ">
+            <div>
+              <div className="mb-2 flex gap-4">
+                {seasons.map((season) => (
+                  <button
+                    key={season}
+                    className={`w-[85px] h-[45px] btn border-2 border-amber-500 hover:bg-amber-500 hover:text-white ${
+                      currentParams.season === season ? "activeSeasonBtn" : ""
+                    }`}
+                    onClick={() =>
+                      handleButtonClick({ season, city: currentParams.city })
+                    }
+                  >
+                    {season}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-4 mb-2">
+                {cities.map((city) => (
+                  <button
+                    key={city}
+                    className={`w-[85px] h-[45px] btn hover:bg-lime-500 hover:text-white border-2 border-lime-500 ${
+                      currentParams.city === city ? "activeCityBtn" : ""
+                    }`}
+                    onClick={() =>
+                      handleButtonClick({ city, season: currentParams.season })
+                    }
+                  >
+                    {city}
+                  </button>
+                ))}
+              </div>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col justify-center">
               <button
-                className={`btn-city border-2 border-lime-500 ${
-                  activeData === "東京" ? "activeCityBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("東京", "city")}
+                className="w-[85px] h-[45px] btn hover:bg-zinc-500 hover:text-white  border-2 border-zinc-500 "
+                onClick={() => handleButtonClick({ clear: true })}
               >
-                東京
-              </button>
-              <button
-                className={`btn-city border-2 border-lime-500 ${
-                  activeData === "大阪" ? "activeCityBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("大阪", "city")}
-              >
-                大阪
-              </button>
-              <button
-                className={`btn-city border-2 border-lime-500 ${
-                  activeData === "北海道" ? "activeCityBtn" : ""
-                }`}
-                onClick={() => filterDataByKeyword("北海道", "city")}
-              >
-                北海道
+                重設
               </button>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <div className=" mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
-          {filteredData.length > 0 ? (
+        <div className="mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
+          {filteredData?.length > 0 ? (
             filteredData.map((event) => {
               return (
                 <li key={event.id} className="list-none">
                   <Link href={`/events/${event.id}`}>
                     <div
                       key={event.id}
-                      className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center p-2"
+                      className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center p-2 relative"
                     >
+                      <div className="tag flex rounded-b-lg items-center justify-center">
+                        <p>{event.feature}</p>
+                      </div>
                       <Image
                         src={event.picture || "/pic_missing.png"}
                         width={200}
@@ -119,10 +161,10 @@ const EventList = ({ data }) => {
                         <p className="text-lg">{event.period}</p>
                       </div>
                       <div className="flex gap-2">
-                        <div className="text-sm p-2 rounded-lg flex bg-red-400 text-white mt-2">
-                          <p className="">{event.feature}</p>
+                        <div className="text-sm p-2 rounded-lg flex bg-amber-500 text-white mt-2">
+                          <p className="">{event.season}</p>
                         </div>
-                        <div className="text-sm p-2 rounded-lg flex bg-cyan-500 text-white mt-2">
+                        <div className="text-sm p-2 rounded-lg flex bg-lime-500 text-white mt-2">
                           <p>{event.city}</p>
                         </div>
                       </div>

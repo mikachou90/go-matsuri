@@ -1,16 +1,37 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { doGetDetail } from "@/api/googleScriptApi/route";
+import { db } from "@/utils/firebaseInit";
+import { ref, onValue } from "firebase/database";
 
-export function generateMetadata({ params }) {
-  return {
-    title: `Go Matsuri!`,
-    description: "日本慶典情報",
+const Event = ({ params }) => {
+  const eventId = params.event_id;
+
+  const test = {
+    val: (param) => {
+      return "toto" + param;
+    },
+    other: "other stuff",
   };
-}
 
-const Event = async ({ params }) => {
-  const data = await doGetDetail(params.event_id);
+  test.val();
+
+  // get all data from firebase
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const eventsRef = ref(db, `/events/${eventId}`);
+    onValue(
+      eventsRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        setData(data);
+      },
+      {
+        onlyOnce: true,
+      }
+    );
+  }, [eventId]);
 
   return (
     <div className="mt-5">
@@ -44,7 +65,7 @@ const Event = async ({ params }) => {
             <p>地點: {data.location}</p>
             <p>交通: {data.station}</p>
             <p className=" text-amber-600 ">
-              <Link href={data.link}>相關連結</Link>
+              {/* <Link href={data.link}>相關連結</Link> */}
             </p>
             <br />
             <p>

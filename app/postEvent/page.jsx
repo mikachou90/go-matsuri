@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
+import { ref, child, push, update } from "firebase/database";
+import { db } from "@/utils/firebaseInit";
 
 const PostEvent = () => {
   const [formData, setFormData] = useState({
     city: "",
-    seasons: "",
+    season: "",
     name: "",
     period: "",
     location: "",
@@ -15,19 +17,27 @@ const PostEvent = () => {
     description: "",
   });
 
-  // console.log("[formData]", formData);
-
   const handleFormSubmit = async (event) => {
-    // console.log("[event in handleSubmmit]", event);
     event.preventDefault();
     try {
-      //fixing post api
-      // const response = await doPostEvent(formData);
-      console.log("[formData in handleSubmit]", formData);
-      console.log("API Response:", response);
-      return response;
+      const newKey = push(child(ref(db), "events")).key;
+      await update(ref(db), {
+        ["events/" + newKey]: {
+          city: formData.city,
+          season: formData.season,
+          name: formData.name,
+          period: formData.period,
+          location: formData.location,
+          picture: formData.picture,
+          feature: formData.feature,
+          station: formData.station,
+          link: formData.link,
+          description: formData.description,
+          id: newKey,
+        },
+      });
     } catch (error) {
-      console.error("API Error:", error);
+      console.error("Post new Event error:", error);
     }
   };
 
@@ -60,27 +70,28 @@ const PostEvent = () => {
               name="city"
               onChange={handleInputChange}
             >
-              <option>城市</option>
-              <option>東京</option>
-              <option>大阪</option>
-              <option>北海道</option>
-              <option>其他</option>
+              <option>請選擇城市</option>
+              <option>Tokyo</option>
+              <option>Osaka</option>
+              <option>Kyoto</option>
+              <option>Hokkaido</option>
+              <option>Others</option>
             </select>
           </label>
-          <label htmlFor="seasons" className="md:mb-4">
+          <label htmlFor="season" className="md:mb-4">
             舉辦季節:
             <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
-              id="seasons"
-              name="seasons"
+              id="season"
+              name="season"
               onChange={handleInputChange}
             >
               <option>請選擇</option>
-              <option>春天</option>
-              <option>夏天</option>
-              <option>秋天</option>
-              <option>冬天</option>
+              <option>spring</option>
+              <option>summer</option>
+              <option>autumn</option>
+              <option>winter</option>
             </select>
           </label>
           <label htmlFor="name" className="md:mb-4">
@@ -95,13 +106,27 @@ const PostEvent = () => {
           </label>
           <label htmlFor="period" className="md:mb-4">
             舉辦月份:
-            <input
+            <select
               className="bg-yellow-500 rounded-md text-white w-full h-8"
               type="text"
               id="period"
               name="period"
               onChange={handleInputChange}
-            />
+            >
+              <option>請選擇</option>
+              <option>1月</option>
+              <option>2月</option>
+              <option>3月</option>
+              <option>4月</option>
+              <option>5月</option>
+              <option>6月</option>
+              <option>7月</option>
+              <option>8月</option>
+              <option>9月</option>
+              <option>10月</option>
+              <option>11月</option>
+              <option>12月</option>
+            </select>
           </label>
           <label htmlFor="location" className="md:mb-4">
             舉辦地點:

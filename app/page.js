@@ -1,29 +1,6 @@
 import Card from "@/components/Card";
-import { doGet } from "@/api/googleScriptApi/route";
 
 export default async function Home() {
-  const events = await doGet();
-  const currentMonth = new Date().getMonth();
-  const seasonMap = [
-    "冬天",
-    "冬天",
-    "春天",
-    "春天",
-    "春天",
-    "夏天",
-    "夏天",
-    "夏天",
-    "秋天",
-    "秋天",
-    "秋天",
-    "冬天",
-  ];
-  const targetSeason = seasonMap[currentMonth];
-
-  const filteredData = events
-    .filter((item) => item.seasons === targetSeason)
-    .slice(0, 4);
-
   return (
     <div>
       <div>
@@ -44,7 +21,7 @@ export default async function Home() {
           </p>
 
           <div className="p-4 grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:gap-8 xl:grid-rows-1">
-            <Card data={filteredData} />
+            <Card />
           </div>
         </div>
       </div>
