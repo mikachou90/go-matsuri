@@ -8,15 +8,6 @@ import Link from "next/link";
 const Event = ({ params }) => {
   const eventId = params.event_id;
 
-  const test = {
-    val: (param) => {
-      return "toto" + param;
-    },
-    other: "other stuff",
-  };
-
-  test.val();
-
   // get all data from firebase
   const [data, setData] = useState({});
 

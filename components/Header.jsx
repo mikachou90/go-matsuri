@@ -41,6 +41,9 @@ export default function Header() {
             <li className="hover:text-white">
               <Link href="/about">關於本站</Link>
             </li>
+            <li className="hover:text-white">
+              <Link href="/login">登入/註冊</Link>
+            </li>
           </ul>
 
           {/* mobile button */}
@@ -72,6 +75,9 @@ export default function Header() {
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
                 <Link href="/about">關於本站</Link>
+              </li>
+              <li className="text-2xl text-black mb-5 hover:text-white">
+                <Link href="/login">登入/註冊</Link>
               </li>
             </ul>
           </div>

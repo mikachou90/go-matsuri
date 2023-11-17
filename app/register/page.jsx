@@ -1,13 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Register = () => {
   return (
     <div>
       <div className="mt-20 w-full flex flex-col items-center">
         <div className="w-[50%]  flex flex-col items-center py-10">
-          <Image src="/logo-large-03.png" width="200" height="20" alt="logo" />
-
           <form
             action=""
             className="flex flex-col items-center my-5 p-5 w-[300px] sm:w-[500px] "
@@ -72,6 +71,9 @@ const Register = () => {
               送出
             </button>
           </form>
+          <div className="flex justify-end text-sm text-gray-500 font-bold sm:w-[350px]">
+            <Link href="/">回首頁</Link>
+          </div>
         </div>
       </div>
     </div>
