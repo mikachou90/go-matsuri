@@ -25,19 +25,6 @@ const EventList = () => {
     };
   });
 
-  // render buttons
-  const seasons = eventsArray
-    .map(({ season }) => season)
-    .filter(
-      (season, index, currentArray) => currentArray.indexOf(season) === index
-    );
-
-  const cities = eventsArray
-    .map(({ city }) => city)
-    .filter(
-      (city, index, currentArray) => currentArray.indexOf(city) === index
-    );
-
   useEffect(() => {
     const db = getDb();
     const eventsRef = ref(db);
@@ -79,6 +66,35 @@ const EventList = () => {
     const cityMatch = !currentParams.city || event.city === currentParams.city;
     return seasonMatch && cityMatch;
   });
+
+  console.log({ filteredData });
+
+  // render buttons
+  let seasons = [];
+  let cities = [];
+  if (filteredData) {
+    seasons = filteredData
+      .map(({ season }) => season)
+      .filter(
+        (season, index, currentArray) => currentArray.indexOf(season) === index
+      );
+    cities = filteredData
+      .map(({ city }) => city)
+      .filter(
+        (city, index, currentArray) => currentArray.indexOf(city) === index
+      );
+  } else {
+    seasons = eventsArray
+      .map(({ season }) => season)
+      .filter(
+        (season, index, currentArray) => currentArray.indexOf(season) === index
+      );
+    cities = eventsArray
+      .map(({ city }) => city)
+      .filter(
+        (city, index, currentArray) => currentArray.indexOf(city) === index
+      );
+  }
 
   return (
     <>
