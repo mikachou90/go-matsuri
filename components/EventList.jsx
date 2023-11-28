@@ -40,25 +40,6 @@ const EventList = () => {
     );
   }, []);
 
-  //buttons function
-  const handleButtonClick = ({ season, city, clear } = {}) => {
-    if (clear) {
-      //clean all
-      return router.push(`/events`);
-    }
-
-    const searchParams = new URLSearchParams();
-
-    if (season) {
-      searchParams.append("season", season);
-    }
-    if (city) {
-      searchParams.append("city", city);
-    }
-
-    return router.push(`/events?${searchParams.toString()}`);
-  };
-
   // filter data
   const filteredData = eventsArray?.filter((event) => {
     const seasonMatch =
@@ -67,9 +48,7 @@ const EventList = () => {
     return seasonMatch && cityMatch;
   });
 
-  console.log({ filteredData });
-
-  // render buttons
+  // render filter buttons
   let seasons = [];
   let cities = [];
   if (filteredData) {
@@ -95,6 +74,25 @@ const EventList = () => {
         (city, index, currentArray) => currentArray.indexOf(city) === index
       );
   }
+
+  //buttons function
+  const handleButtonClick = ({ season, city, clear } = {}) => {
+    if (clear) {
+      //clean all
+      return router.push(`/events`);
+    }
+
+    const searchParams = new URLSearchParams();
+
+    if (season) {
+      searchParams.append("season", season);
+    }
+    if (city) {
+      searchParams.append("city", city);
+    }
+
+    return router.push(`/events?${searchParams.toString()}`);
+  };
 
   return (
     <>
