@@ -2,7 +2,7 @@ import EventList from "@/components/EventList";
 
 const Events = async () => {
   return (
-    <div>
+    <div className="py-10 px-20 mt-20">
       <EventList />
     </div>
   );
