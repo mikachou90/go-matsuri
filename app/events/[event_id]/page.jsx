@@ -69,6 +69,14 @@ const Event = ({ params }) => {
             <p className="text-gray-400 lg:text-lg">
               本網站提供的情報僅供參考，實際舉辦日期與期間請以該祭典主辦單位公布為主。
             </p>
+            <div className="w-full mt-5 p-2  flex justify-end text-gray-500 font-bold text-lg">
+              <Link href="/" className="mx-2">
+                回首頁
+              </Link>
+              <Link href="/events" className="mx-2">
+                回一覽表
+              </Link>
+            </div>
           </div>
         </div>
       </div>
