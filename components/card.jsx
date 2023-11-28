@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { db } from "@/utils/firebaseInit";
-import { ref, onValue } from "firebase/database";
+import { getDb } from "@/utils/firebaseInit";
+import { ref, onValue, getDatabase } from "firebase/database";
 
 const Card = () => {
   const [eventsData, setEventsData] = useState({});
@@ -16,9 +16,10 @@ const Card = () => {
     };
   });
 
-  console.log({ eventsArray });
+  // console.log({ eventsArray });
 
   useEffect(() => {
+    const db = getDb();
     const eventsRef = ref(db);
     onValue(
       eventsRef,
@@ -32,7 +33,7 @@ const Card = () => {
     );
   }, []);
 
-  console.log({ eventsData });
+  // console.log({ eventsData });
 
   const currentMonth = new Date().getMonth();
   const seasonMap = [
@@ -55,7 +56,7 @@ const Card = () => {
     .filter((item) => item.season === targetSeason)
     .slice(0, 4);
 
-  console.log({ filteredData });
+  // console.log({ filteredData });
 
   return (
     <>

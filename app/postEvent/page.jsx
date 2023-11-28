@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ref, child, push, update } from "firebase/database";
-import { db } from "@/utils/firebaseInit";
+import { getDb } from "@/utils/firebaseInit";
 
 const PostEvent = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +20,7 @@ const PostEvent = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      const db = getDb();
       const newKey = push(child(ref(db), "events")).key;
       await update(ref(db), {
         ["events/" + newKey]: {

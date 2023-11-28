@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { db } from "@/utils/firebaseInit";
+import { getDb } from "@/utils/firebaseInit";
 import { ref, onValue } from "firebase/database";
 
 const EventList = () => {
@@ -39,6 +39,7 @@ const EventList = () => {
     );
 
   useEffect(() => {
+    const db = getDb();
     const eventsRef = ref(db);
     onValue(
       eventsRef,
