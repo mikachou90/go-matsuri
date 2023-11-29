@@ -4,24 +4,23 @@ const page = () => {
   return (
     <div className="mt-20 px-20 py-10">
       <div>
-        <div>
-          <h1 className="text-3xl font-bold ">關於本站</h1>
-          <div className="my-10 grid grid-cols-1 gap-5 xl:grid-cols-2 xl:gap-2">
-            <div>
-              <Image
-                src="https://images.unsplash.com/photo-1652584373395-6fb5a7510ada?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                width={800}
-                height={300}
-                alt="about picture"
-              />
-            </div>
-            <div className="flex items-center ">
-              <p className="text-xl lg:text-2xl">
-                走訪過許多國家，深切體會一個祭典、一個活動都是可以接觸一個國家文化的方式，為更豐富旅行的意義，就從參與祭典開始吧!
-                <br />
-                同時也歡迎提供更多日本在地祭典/活動的情報，讓台日交流能夠更加熱烈!
+        <div className=" w-[260px] sm:w-[500px] md:w-[600px] lg:w-[900px]">
+          <h1 className="text-3xl font-bold ">關於Go Matsuri</h1>
+          <div className="mt-5 ">
+            <div className="text-2xl font-bold my-10 text-zinc-600 ">
+              <p className="leading-10 mb-5">Make your journey even better!</p>
+              <p className="leading-10 ">
+                一個祭典、一個活動都是可以接觸一個國家文化的方式，為更豐富旅行的意義，就從參與祭典開始吧!
               </p>
             </div>
+
+            <p className="text-xl leading-10 ">
+              「Matsuri」一詞為日文「祭典」之意，日本人相信神靈存在於萬物之中。為了感謝自然和神明、對生活感到喜悅並發展社區，而舉辦了各種祭典，這也是為什麼日本人非常喜歡祭典。
+              <br />
+              了解祭典即了解日本。透過參與祭典，你可以接觸平時難以見到的歷史，與在地人互動，發現新的一面。在祭典期間，人們變得非常熱情開放，你還有機會參與祭典時期才有的交流活動。若有機會，在你的旅行中試著參加各種祭典，感受日本的活力吧!
+              <br />
+              同時也歡迎提供更多日本在地祭典/活動的情報，讓台日交流能夠更加熱烈!
+            </p>
           </div>
         </div>
       </div>
