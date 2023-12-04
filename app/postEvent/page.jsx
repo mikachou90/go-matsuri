@@ -35,6 +35,7 @@ const PostEvent = () => {
           link: formData.link,
           description: formData.description,
           id: newKey,
+          isMyFav: false,
         },
       });
     } catch (error) {
