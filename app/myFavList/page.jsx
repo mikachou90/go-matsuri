@@ -35,7 +35,7 @@ const MyFavList = () => {
     );
   }, []);
 
-  let favIdArray = JSON.parse(localStorage.getItem("isFavId"));
+  let favIdArray = JSON.parse(localStorage.getItem("isFavId")) || [];
 
   const myFavEvents = newEventsArray.filter((event) =>
     favIdArray.includes(event.id)
