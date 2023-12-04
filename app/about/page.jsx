@@ -8,7 +8,7 @@ const page = () => {
           <h1 className="text-3xl font-bold ">關於Go Matsuri</h1>
           <div className="mt-10 ">
             <Image
-              src="/street-view.jpg"
+              src="/event-shot.jpg"
               height={40}
               width={250}
               className="sm:w-full sm:h-60 object-cover"
