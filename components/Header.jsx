@@ -37,12 +37,12 @@ export default function Header() {
             <li className="hover:text-white">
               <Link href="/postEvent">提供祭典</Link>
             </li>
+            <li className="hover:text-white">
+              <Link href="/myFavList">我的祭典</Link>
+            </li>
 
             <li className="hover:text-white">
               <Link href="/about">關於本站</Link>
-            </li>
-            <li className="hover:text-white">
-              <Link href="/login">登入/註冊</Link>
             </li>
           </ul>
 
@@ -74,10 +74,10 @@ export default function Header() {
                 <Link href="/postEvent">提供祭典</Link>
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/about">關於本站</Link>
+                <Link href="/myFavList">我的祭典</Link>
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/login">登入/註冊</Link>
+                <Link href="/about">關於本站</Link>
               </li>
             </ul>
           </div>
