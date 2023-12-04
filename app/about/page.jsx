@@ -6,11 +6,19 @@ const page = () => {
       <div>
         <div className=" w-[260px] sm:w-[500px] md:w-[600px] lg:w-[900px]">
           <h1 className="text-3xl font-bold ">關於Go Matsuri</h1>
-          <div className="mt-5 ">
+          <div className="mt-10 ">
+            <Image
+              src="/street-view.jpg"
+              height={40}
+              width={250}
+              className="sm:w-full sm:h-60 object-cover"
+            />
             <div className="text-2xl font-bold my-10 text-zinc-600 ">
               <p className="leading-10 mb-5">Make your journey even better!</p>
               <p className="leading-10 ">
-                一個祭典、一個活動都是可以接觸一個國家文化的方式，為更豐富旅行的意義，就從參與祭典開始吧!
+                一個祭典、一個活動都是可以接觸一個國家文化的方式
+                <br />
+                為更豐富旅行的意義，就從參與祭典開始吧!
               </p>
             </div>
 
