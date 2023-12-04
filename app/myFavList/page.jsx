@@ -5,10 +5,20 @@ import { ref, onValue } from "firebase/database";
 import { IoCloseOutline } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import EventCard from "@/components/EventCard";
 
 const MyFavList = () => {
   const [eventsData, setEventsData] = useState({});
   const [newEventsArray, setNewEventsArray] = useState([]);
+  const renderFavBtn = () => {
+    let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
+
+    setNewEventsArray((preArray) =>
+      preArray.map((event) =>
+        favIdArrs.includes(event.id) ? { ...event, isMyFav: true } : event
+      )
+    );
+  };
 
   useEffect(() => {
     const db = getDb();
@@ -28,6 +38,7 @@ const MyFavList = () => {
           };
         });
         setNewEventsArray(newArray);
+        renderFavBtn();
       },
       {
         onlyOnce: true,
@@ -63,57 +74,15 @@ const MyFavList = () => {
           myFavEvents.map((event) => {
             return (
               <li key={event.id} id={event.id} className="list-none">
-                <div
-                  key={event.id}
-                  id={event.id}
-                  className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center p-2 relative"
-                >
-                  <IoCloseOutline
-                    className="cardIcon"
-                    size={30}
-                    data-id={event.id}
-                    onClick={cancelBtnHandler}
-                  />
-
-                  <Link href={`/events/${event.id}`}>
-                    <div className="tag flex rounded-b-lg items-center justify-center">
-                      <p>{event.feature}</p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <Image
-                        src={event.picture || "/pic_missing.png"}
-                        width={200}
-                        height={80}
-                        alt="event picture"
-                      />
-                      <div className="mt-5 flex flex-col items-center">
-                        <p className="text-xl font-bold text-center">
-                          {event.name}
-                        </p>
-
-                        <p className="text-lg">{event.period}</p>
-                      </div>
-                      <div className="flex justify-center gap-2">
-                        <div className="text-sm p-2 rounded-lg flex bg-amber-500 text-white mt-2">
-                          <p className="">{event.season}</p>
-                        </div>
-                        <div className="text-sm p-2 rounded-lg flex bg-lime-500 text-white mt-2">
-                          <p>{event.city}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+                <EventCard event={event} cancelBtnHandler={cancelBtnHandler} />
               </li>
             );
           })
         ) : (
           <div className="w-full h-10 text-xl font-bold mb:w-full">
-            <p>
-              尚未有任何祭典加入清單
-              <br />
-              趕快找尋你最愛的祭典吧!!
-            </p>
+            尚未有任何祭典加入清單中，
+            <br />
+            趕快找尋你最愛的祭典吧!
           </div>
         )}
       </div>
