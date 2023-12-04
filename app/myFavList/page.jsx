@@ -2,9 +2,6 @@
 import { useState, useEffect } from "react";
 import { getDb } from "@/utils/firebaseInit";
 import { ref, onValue } from "firebase/database";
-import { IoCloseOutline } from "react-icons/io5";
-import Link from "next/link";
-import Image from "next/image";
 import EventCard from "@/components/EventCard";
 
 const MyFavList = () => {
