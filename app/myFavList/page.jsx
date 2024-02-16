@@ -9,9 +9,7 @@ const MyFavList = () => {
   const [newEventsArray, setNewEventsArray] = useState([]);
 
   const renderFavBtn = () => {
-    let favIdArrs = window?.localStorage?.getItem("isFavId")
-      ? JSON.parse(localStorage.getItem("isFavId"))
-      : [];
+    let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
 
     setNewEventsArray((preArray) =>
       preArray.map((event) =>
@@ -46,9 +44,7 @@ const MyFavList = () => {
     );
   }, []);
 
-  let favIdArray = window?.localStorage?.getItem("isFavId")
-    ? JSON.parse(localStorage.getItem("isFavId"))
-    : [];
+  let favIdArray = JSON.parse(localStorage.getItem("isFavId")) || [];
 
   const myFavEvents = newEventsArray.filter((event) =>
     favIdArray.includes(event.id)
