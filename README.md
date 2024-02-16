@@ -27,7 +27,7 @@ When visitors like a event by clicking the heart icon on the event card, visitor
 npm install
 ```
 
-4. Run the project
+4.Run the project
 
 ```javascript
 npm run dev
