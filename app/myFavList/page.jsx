@@ -5,10 +5,14 @@ import { ref, onValue } from "firebase/database";
 import EventCard from "@/components/EventCard";
 
 const MyFavList = () => {
-  const [eventsData, setEventsData] = useState({});
+  const [eventData, setEventsData] = useState({});
   const [newEventsArray, setNewEventsArray] = useState([]);
+
   const renderFavBtn = () => {
-    let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
+    if (typeof window !== "undefined") {
+      let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
+      return favIdArrs;
+    }
 
     setNewEventsArray((preArray) =>
       preArray.map((event) =>

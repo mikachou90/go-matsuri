@@ -19,7 +19,10 @@ const Events = () => {
   const [newEventsArray, setNewEventsArray] = useState([]);
 
   const renderFavBtn = () => {
-    let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
+    if (typeof window !== "undefined") {
+      let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
+      return favIdArrs;
+    }
 
     setNewEventsArray((preArray) =>
       preArray.map((event) =>
