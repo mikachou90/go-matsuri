@@ -11,6 +11,7 @@ const page = () => {
               src="/event-shot.jpg"
               height={40}
               width={250}
+              alt="event image"
               className="sm:w-full sm:h-60 object-cover"
             />
             <div className="text-2xl font-bold my-10 text-zinc-600 ">
