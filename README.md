@@ -21,17 +21,23 @@ When visitors like a event by clicking the heart icon on the event card, visitor
 
 2.Clone this project.
 
-3.```bash
-npm install
-
-````
+3.  npm install
 
 4.```bash
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
+
 bun dev
-````
+
+```
+
+```
