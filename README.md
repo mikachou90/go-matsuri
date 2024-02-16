@@ -17,10 +17,10 @@ When visitors like a event by clicking the heart icon on the event card, visitor
 
 ## Getting Started
 
-1.Please ensure that Node.js (18.17.0) and npm are well installed in your local environment.
+1.Please ensure that Node.js (18.17.1) and npm are well installed in your local environment.
 
 2.Clone this project.
 
-3.`npm install`
+3.  npm install
 
-4.`npm run dev`
+4.  npm run dev
