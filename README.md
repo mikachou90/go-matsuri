@@ -21,7 +21,6 @@ When visitors like a event by clicking the heart icon on the event card, visitor
 
 3.```bash
 npm install
-
 ````
 
 4.```bash
