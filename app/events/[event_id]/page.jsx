@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { getDb } from "@/utils/firebaseInit";
+import { getDb } from "../../../utils/firebaseInit";
 import { ref, onValue } from "firebase/database";
 import Link from "next/link";
 

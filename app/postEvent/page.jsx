@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ref, child, push, update } from "firebase/database";
-import { getDb } from "@/utils/firebaseInit";
+import { getDb } from "../../utils/firebaseInit";
 
 const PostEvent = () => {
   const [formData, setFormData] = useState({

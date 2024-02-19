@@ -1,8 +1,8 @@
 "use client";
-import EventCard from "@/components/EventCard";
+import EventCard from "../../components/EventCard";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getDb } from "@/utils/firebaseInit";
+import { getDb } from "../../utils/firebaseInit";
 import { ref, onValue, update, get } from "firebase/database";
 
 const Events = () => {

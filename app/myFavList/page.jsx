@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getDb } from "@/utils/firebaseInit";
+import { getDb } from "../../utils/firebaseInit";
 import { ref, onValue, get, update } from "firebase/database";
-import EventCard from "@/components/EventCard";
+import EventCard from "../../components/EventCard";
 
 const MyFavList = () => {
   const [eventData, setEventsData] = useState({});

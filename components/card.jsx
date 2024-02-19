@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getDb } from "@/utils/firebaseInit";
-import { ref, onValue, getDatabase } from "firebase/database";
+import { getDb } from "../utils/firebaseInit";
+import { ref, onValue } from "firebase/database";
 
 const Card = () => {
   const [eventsData, setEventsData] = useState({});
