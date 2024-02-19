@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ref, child, push, update } from "firebase/database";
 import { getDb } from "@/utils/firebaseInit";
 
@@ -15,7 +16,10 @@ const PostEvent = () => {
     station: "",
     link: "",
     description: "",
+    isMyFav: false,
   });
+
+  const router = useRouter();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -35,9 +39,10 @@ const PostEvent = () => {
           link: formData.link,
           description: formData.description,
           id: newKey,
-          isMyFav: false,
         },
       });
+      alert("祭典新增成功");
+      router.push("/events");
     } catch (error) {
       console.error("Post new Event error:", error);
     }

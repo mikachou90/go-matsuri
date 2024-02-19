@@ -3,7 +3,7 @@ import EventCard from "@/components/EventCard";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getDb } from "@/utils/firebaseInit";
-import { ref, onValue } from "firebase/database";
+import { ref, onValue, update, get } from "firebase/database";
 
 const Events = () => {
   const router = useRouter();
@@ -18,17 +18,7 @@ const Events = () => {
   const [eventsData, setEventsData] = useState({});
   const [newEventsArray, setNewEventsArray] = useState([]);
 
-  const renderFavBtn = () => {
-    let favIdArrs = JSON.parse(localStorage.getItem("isFavId")) || [];
-
-    setNewEventsArray((preArray) =>
-      preArray.map((event) =>
-        favIdArrs.includes(event.id) ? { ...event, isMyFav: true } : event
-      )
-    );
-  };
-
-  useEffect(() => {
+  const fetchData = () => {
     const db = getDb();
     const eventsRef = ref(db);
     onValue(
@@ -42,17 +32,20 @@ const Events = () => {
           return {
             ...data.events[eventKey],
             id: eventKey,
-            isMyFav: false,
           };
         });
+
         setNewEventsArray(newArray);
-        renderFavBtn();
       },
 
       {
         onlyOnce: true,
       }
     );
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   // filter data
@@ -111,36 +104,21 @@ const Events = () => {
     return router.push(`/events?${searchParams.toString()}`);
   };
 
-  // add to fav list button
-  const updateFavoriteStatus = (id, isCancel = false) => {
-    let favIdArray = JSON.parse(localStorage.getItem("isFavId")) || [];
+  const favBtnHandler = async (e) => {
+    const id = e.currentTarget.dataset.id;
 
-    if (isCancel) {
-      favIdArray = favIdArray.filter((favId) => favId !== id);
+    const db = getDb();
+    const eventRef = ref(db, "events/" + id);
+
+    const snapshot = await get(eventRef);
+    if (snapshot.exists()) {
+      const isMyFav = snapshot.val().isMyFav;
+
+      await update(eventRef, { isMyFav: !isMyFav });
+      await fetchData();
     } else {
-      if (!favIdArray.includes(id)) {
-        favIdArray.push(id);
-      }
+      console.log("No such event!");
     }
-
-    let favIdStr = JSON.stringify(favIdArray);
-    localStorage.setItem("isFavId", favIdStr);
-
-    setNewEventsArray((preArray) =>
-      preArray.map((event) =>
-        event.id === id ? { ...event, isMyFav: !event.isMyFav } : event
-      )
-    );
-  };
-
-  const favBtnHandler = (e) => {
-    const id = e.currentTarget.dataset.id;
-    updateFavoriteStatus(id);
-  };
-
-  const cancelBtnHandler = (e) => {
-    const id = e.currentTarget.dataset.id;
-    updateFavoriteStatus(id, true);
   };
 
   return (
@@ -203,11 +181,7 @@ const Events = () => {
             filteredData.map((event) => {
               return (
                 <li key={event.id} id={event.id} className="list-none">
-                  <EventCard
-                    event={event}
-                    favBtnHandler={favBtnHandler}
-                    cancelBtnHandler={cancelBtnHandler}
-                  />
+                  <EventCard event={event} favBtnHandler={favBtnHandler} />
                 </li>
               );
             })

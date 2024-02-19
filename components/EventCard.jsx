@@ -2,9 +2,9 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import Link from "next/link";
 import Image from "next/image";
 
-const EventCard = ({ event, favBtnHandler, cancelBtnHandler }) => {
+const EventCard = ({ event, favBtnHandler, deleteHandler }) => {
   return (
-    <div>
+    <>
       <div
         key={event.id}
         id={event.id}
@@ -15,7 +15,7 @@ const EventCard = ({ event, favBtnHandler, cancelBtnHandler }) => {
             className="cardIcon "
             size={25}
             color="red"
-            onClick={cancelBtnHandler}
+            onClick={event.isMyFav ? deleteHandler : favBtnHandler}
             data-id={event.id}
           />
         ) : (
@@ -54,7 +54,7 @@ const EventCard = ({ event, favBtnHandler, cancelBtnHandler }) => {
           </div>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

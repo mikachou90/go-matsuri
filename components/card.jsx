@@ -16,8 +16,6 @@ const Card = () => {
     };
   });
 
-  // console.log({ eventsArray });
-
   useEffect(() => {
     const db = getDb();
     const eventsRef = ref(db);
@@ -32,8 +30,6 @@ const Card = () => {
       }
     );
   }, []);
-
-  // console.log({ eventsData });
 
   const currentMonth = new Date().getMonth();
   const seasonMap = [
@@ -55,8 +51,6 @@ const Card = () => {
   const filteredData = eventsArray
     .filter((item) => item.season === targetSeason)
     .slice(0, 4);
-
-  // console.log({ filteredData });
 
   return (
     <>
