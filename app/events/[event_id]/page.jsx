@@ -58,11 +58,7 @@ const Event = ({ params }) => {
             <p>地點: {data.location}</p>
             <p>交通: {data.station}</p>
             <p className=" text-amber-600 ">
-              {data.link ? (
-                <Link href={data.link || ""}>相關連結</Link>
-              ) : (
-                <h2>尚無相關連結...</h2>
-              )}
+              <Link href={data.link || ""}>相關連結</Link>
             </p>
             <br />
             <p>
@@ -74,10 +70,10 @@ const Event = ({ params }) => {
               本網站提供的情報僅供參考，實際舉辦日期與期間請以該祭典主辦單位公布為主。
             </p>
             <div className="w-full mt-5 p-2  flex justify-end text-gray-500 font-bold text-lg">
-              <Link href="/" className="mx-2">
+              <Link href="/" className="mx-2 hover:text-gray-800">
                 回首頁
               </Link>
-              <Link href="/events" className="mx-2">
+              <Link href="/events" className="mx-2 hover:text-gray-800">
                 回一覽表
               </Link>
             </div>
