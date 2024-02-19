@@ -64,20 +64,30 @@ export default function Header() {
           >
             <ul>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/">首頁</Link>
+                <Link href="/" onClick={handleMobileNav}>
+                  首頁
+                </Link>
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/events">祭典一覽</Link>
+                <Link href="/events" onClick={handleMobileNav}>
+                  祭典一覽
+                </Link>
               </li>
 
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/postEvent">提供祭典</Link>
+                <Link href="/postEvent" onClick={handleMobileNav}>
+                  提供祭典
+                </Link>
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/myFavList">我的祭典</Link>
+                <Link href="/myFavList" onClick={handleMobileNav}>
+                  我的祭典
+                </Link>
               </li>
               <li className="text-2xl text-black mb-5 hover:text-white">
-                <Link href="/about">關於本站</Link>
+                <Link href="/about" onClick={handleMobileNav}>
+                  關於本站
+                </Link>
               </li>
             </ul>
           </div>
