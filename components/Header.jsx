@@ -18,10 +18,10 @@ export default function Header() {
         <Link href="/">
           <Image
             src="/logo-large-03.png"
-            width="250"
+            width="500"
             height="20"
             alt="logo"
-            className="lg:w-[180px]"
+            className="sm:w-[200px]"
           />
         </Link>
 
