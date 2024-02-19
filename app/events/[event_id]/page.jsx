@@ -58,7 +58,11 @@ const Event = ({ params }) => {
             <p>地點: {data.location}</p>
             <p>交通: {data.station}</p>
             <p className=" text-amber-600 ">
-              <Link href={data.link || ""}>相關連結</Link>
+              {data.link ? (
+                <Link href={data.link || ""}>相關連結</Link>
+              ) : (
+                <h2>尚無相關連結...</h2>
+              )}
             </p>
             <br />
             <p>
