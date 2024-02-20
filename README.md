@@ -12,7 +12,7 @@ Last updated: 02/19/2024
 This is my first side project which is created with React, Next.js, Tailwind css and firebase.
 
 【Project Concept】  
-Due to my past experiences in travel services and traveling experince, I hope to share with fellow travel enthusiasts the various festivals I have encountered during my journeys on this website. By doing so, I aim to provide insights into local cultural experiences for travelers in Japan. Additionally, I encourage other users to share their own festival experiences or gathered information, thereby fostering a community where we collectively contribute to information sharing.
+Due to my past experiences in travel services and self-guided trips, I hope to share the festivals I have encountered during my journeys with people who love traveling on this website. By doing so, I aim to provide insights into local cultural experiences for travelers in Japan or people who are planning to travel to Japan. Additionally, I encourage any users to share their own festival experiences or gathered information, thereby fostering a community where we collectively contribute to information sharing.
 
 --
 
