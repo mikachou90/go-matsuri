@@ -73,16 +73,8 @@ const Events = () => {
         (city, index, currentArray) => currentArray.indexOf(city) === index
       );
   } else {
-    seasons = filteredData
-      .map(({ season }) => season)
-      .filter(
-        (season, index, currentArray) => currentArray.indexOf(season) === index
-      );
-    cities = filteredData
-      .map(({ city }) => city)
-      .filter(
-        (city, index, currentArray) => currentArray.indexOf(city) === index
-      );
+    seasons = [];
+    cities = [];
   }
 
   //buttons function
