@@ -16,9 +16,8 @@ const firebaseConfig = {
 const createFireBaseApp = () => {
   if (getApps().length <= 0) {
     const app = initializeApp(firebaseConfig);
-    // Check that `window` is in scope for the analytics module!
+
     if (typeof window !== "undefined") {
-      // Enable analytics. https://firebase.google.com/docs/analytics/get-started
       if ("measurementId" in firebaseConfig) {
         getAnalytics();
       }
@@ -37,9 +36,3 @@ const getDb = () => {
 };
 
 export { getDb, createFireBaseApp };
-
-// const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-// const db = getDatabase(app);
-// const auth = getAuth();
-
-// export { db, auth };
