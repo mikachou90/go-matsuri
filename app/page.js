@@ -22,6 +22,9 @@ export default async function Home() {
 
           <div className="p-4 grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-4 xl:gap-8 xl:grid-rows-1">
             <Card />
+            <div>
+              <p>test</p>
+            </div>
           </div>
         </div>
       </div>
