@@ -97,7 +97,6 @@ const Events = () => {
   };
 
   const favBtnHandler = async (e) => {
-    console.log("favBtnHandler");
     const id = e.currentTarget.dataset.id;
 
     const db = getDb();
