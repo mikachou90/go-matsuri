@@ -8,7 +8,7 @@ const EventCard = ({ event, favBtnHandler, deleteHandler }) => {
       <div
         key={event.id}
         id={event.id}
-        className="bg-stone-200 w-[300px] h-[400px] rounded-lg flex flex-col justify-center items-center p-2 relative"
+        className="bg-stone-200 w-[250px] h-[350px] rounded-lg flex flex-col justify-center items-center p-2 relative hover:shadow-xl transition duration-300 ease-in-out cursor-pointer"
       >
         {event.isMyFav ? (
           <GoHeartFill
@@ -32,12 +32,14 @@ const EventCard = ({ event, favBtnHandler, deleteHandler }) => {
             <p>{event.feature}</p>
           </div>
           <div className="flex flex-col items-center">
-            <Image
-              src={event.picture || "/pic_missing.png"}
-              width={200}
-              height={80}
-              alt="event picture"
-            />
+            <div className="w-[160px] h-[140px] relative mt-2">
+              <Image
+                src={event.picture || "/pic_missing.png"}
+                alt="event picture"
+                fill
+              />
+            </div>
+
             <div className="mt-5 flex flex-col items-center">
               <p className="text-xl font-bold text-center">{event.name}</p>
 
