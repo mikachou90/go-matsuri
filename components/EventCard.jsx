@@ -2,7 +2,7 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import Link from "next/link";
 import Image from "next/image";
 
-const EventCard = ({ event, favBtnHandler, deleteHandler }) => {
+const EventCard = ({ event, favBtnHandler }) => {
   return (
     <>
       <div
@@ -15,7 +15,7 @@ const EventCard = ({ event, favBtnHandler, deleteHandler }) => {
             className="cardIcon "
             size={25}
             color="red"
-            onClick={event.isMyFav ? deleteHandler : favBtnHandler}
+            onClick={favBtnHandler}
             data-id={event.id}
           />
         ) : (
