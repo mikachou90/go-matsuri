@@ -59,16 +59,14 @@ const Card = () => {
           <li key={event.id} className="list-none">
             <Link href={`/events/${event.id}`}>
               <div className="card-wrapper">
-                <div>
+                <div className="image-wrapper">
                   <Image
-                    src={event.picture || "/pic_missing.png"}
-                    width={400}
-                    height={150}
+                    src={event.picture ? event.picture : "/pic_missing.png"}
                     alt="event picture"
-                    className="w-[300px]"
+                    fill
                   />
                 </div>
-                <div className="w-full py-4 flex flex-col items-center bg-white/50 absolute bottom-0 card-hover m">
+                <div className="w-full py-4 flex flex-col items-center bg-stone-200/50 absolute bottom-0 card-hover m">
                   <p className="text-xl">{event.name}</p>
                   <p className="text-xl">{event.period}</p>
                 </div>
