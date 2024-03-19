@@ -44,7 +44,7 @@ const MyFavList = () => {
     }
   }, [newEventsArray]);
 
-  const deleteHandler = async (e) => {
+  const favBtnHandler = async (e) => {
     const id = e.currentTarget.dataset.id;
 
     const db = getDb();
@@ -54,7 +54,7 @@ const MyFavList = () => {
     if (snapshot.exists()) {
       const isMyFav = snapshot.val().isMyFav;
 
-      await update(eventRef, { isMyFav: false });
+      await update(eventRef, { isMyFav: !isMyFav });
       await fetchData();
     } else {
       console.log("No such event!");
@@ -69,7 +69,7 @@ const MyFavList = () => {
           favEvents.map((event) => {
             return (
               <li key={event.id} id={event.id} className="list-none">
-                <EventCard event={event} deleteHandler={deleteHandler} />
+                <EventCard event={event} favBtnHandler={favBtnHandler} />
               </li>
             );
           })
