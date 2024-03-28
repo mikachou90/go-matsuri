@@ -46,7 +46,7 @@ const Event = ({ params }) => {
 
         <div className="px-5 flex flex-col items-center  xl:flex-row xl:mt-5">
           <Image
-            src={data.picture || "/pic_missing.png"}
+            src={data.picture || "/missing-pic.jpg"}
             width={300}
             height={300}
             alt="event picture"

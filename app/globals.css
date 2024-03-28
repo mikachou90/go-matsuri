@@ -42,11 +42,17 @@ body, html {
 .swiper {
   width:60vw;
   height: 40vh;
+
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
 }
 
 
 .swiper-button-next {
-  color: red;
+  color: red
 
 }
 
