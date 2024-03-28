@@ -19,9 +19,11 @@ export default function Home() {
         </section>
         <section className="border-2 border-green-800 flex flex-col items-center my-10 p-5">
           <div className="mb-5 ">
-            <h1 className="text-2xl font-bold">搜尋、分享、儲存喜歡的祭典!</h1>
+            <h1 className="text-2xl my-6 font-bold md:text-3xl md:my-3">
+              搜尋、分享、儲存喜歡的祭典!
+            </h1>
           </div>
-          <div className=" md:flex ">
+          <div className="p-5 md:flex md:justify-center md:items-center">
             {introText.map((data) => {
               return (
                 <IntroCards
@@ -29,15 +31,16 @@ export default function Home() {
                   src={data.link}
                   intro={data.intro}
                   title={data.title}
+                  pageLink={data.pageLink}
                 />
               );
             })}
           </div>
         </section>
         <section className="border-2 border-red-500 flex flex-col items-center my-10 p-5 ">
-          <p className="text-2xl font-bold my-6 md:text-3xl  md:my-3">
+          <h1 className="text-2xl font-bold my-6 md:text-3xl  md:my-3">
             當季祭典
-          </p>
+          </h1>
           <CurrentEvents />
         </section>
       </div>
