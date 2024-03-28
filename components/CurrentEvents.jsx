@@ -62,7 +62,7 @@ export default function CurrentEvents() {
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {filteredData?.map((event) => {
             return (
-              <SwiperSlide key={event.key}>
+              <SwiperSlide key={event.id}>
                 <li key={event.id} className="list-none m-auto">
                   <Link href={`/events/${event.id}`}>
                     <div className="card-wrapper">

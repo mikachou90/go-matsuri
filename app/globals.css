@@ -16,6 +16,26 @@ body, html {
   background-size: cover;
 }
 
+.roundImg{
+  border-radius: 50%;
+  width: 40vw;
+  height: 40vw;
+}
+
+.introCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin:0 1rem ;
+}
+
+.introCardContainer:hover{
+ background-color: rgb(234, 208, 145);
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 .card-wrapper {
   width: 60vw;
@@ -27,8 +47,6 @@ body, html {
 }
 
 .card-wrapper:hover {
-
-
 }
 
 .image-wrapper{
@@ -105,20 +123,12 @@ font-weight: 700;
 
 }
 
-@media (min-width: 768px) {
-  .hero-img {
-    width: 100%;
-    height: 400px;
-  }
-}
 
 @media (min-width:648px) {
 
   .swiper {
       width: 80vw;
       height: 40vh;
-      /* border:1px solid red; */
-  
     }
 
 .card-wrapper {
@@ -140,6 +150,20 @@ font-weight: 700;
   .btn{
     font-size: 18px;
   }
+}
+
+@media (min-width: 768px) {
+  .hero-img {
+    width: 100%;
+    height: 400px;
+  }
+    .roundImg {
+      border-radius: 50%;
+      width: 20vw;
+      height: 20vw;
+    }
+
+
 }
 
 @media (min-width: 1024px) {
