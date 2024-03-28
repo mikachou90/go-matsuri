@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="w-full min-w-full">
         <div className="bg-gray-300 flex flex-col justify-center items-center py-4">
           <Image src="/logo-large-03.png" width="120" height="30" alt="logo" />
-          <p className="text-zinc-400 mt-2">COPYRIGHT BY M.C</p>
+          <p className="text-zinc-400 mt-2">此網站僅為個人作品練習用。</p>
         </div>
       </div>
     </>
