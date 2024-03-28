@@ -1,6 +1,6 @@
-import CurrentEvents from "@/components/CurrentEvents";
+import CurrentEvents from "../components/CurrentEvents";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <div>
@@ -19,10 +19,7 @@ export default async function Home() {
           <p className="text-2xl font-bold my-6 md:text-2xl  md:my-3">
             當季祭典
           </p>
-
-          <div className="">
-            <CurrentEvents />
-          </div>
+          <CurrentEvents />
         </div>
       </div>
     </>
