@@ -34,7 +34,7 @@ const EventCard = ({ event, favBtnHandler }) => {
           <div className="flex flex-col items-center">
             <div className="w-[160px] h-[140px] relative mt-2">
               <Image
-                src={event.picture || "/pic_missing.png"}
+                src={event.picture || "/missing-pic.jpg"}
                 alt="event picture"
                 fill
               />
