@@ -11,8 +11,10 @@ export default function IntroCards({ src, intro, title, pageLink }) {
           alt="intro picture"
           className="roundImg"
         />
-        <p className="text-lg font-bold  lg:text-2xl">{title}</p>
-        <div className="p-2 rounded-lg w-[35vw] text-sm md:w-[25vw] lg:text-lg">
+        <p className="mt-5 text-lg font-bold  md:text-2xl lg:text-3xl">
+          {title}
+        </p>
+        <div className="p-2 w-[40vw]  text-sm sm:w-[30vw] sm:h-[8vh] md:text-xl lg:text-2xl">
           {intro}
         </div>
       </div>
