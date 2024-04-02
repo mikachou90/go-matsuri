@@ -79,14 +79,14 @@ export default function CurrentEvents() {
                         <p className="text-xl font-bold mb-1 lg:text-2xl md:mb-2 lg:mb-5">
                           {event.name}
                         </p>
-                        <div className="h-[5vh] text-clip overflow-hidden ... sm:h-[28vh]">
-                          <p className="text-sm sm:text-lg md:text-xl">
+                        <div className="sm:text-clip sm:overflow-hidden  sm:h-[28vh]">
+                          <p className="sm:text-lg md:text-xl text-hidden">
                             {event.description}
                           </p>
                         </div>
                       </div>
-                      <div className="absolute right-2 bottom-5   md:px-2">
-                        <p className="text-sm bg-orange-800 text-white px-2 py-1 rounded ">
+                      <div className="absolute right-2 bottom-5 ">
+                        <p className="text-xs  bg-lime-700 text-white p-1 ">
                           詳細
                         </p>
                       </div>

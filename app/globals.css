@@ -66,24 +66,28 @@ border:2px solid rgb(251 191 36);
 
 .card-wrapper {
   width: 60vw;
-  height: 40vh;
+  height: 30vh;
   border: 1px solid rgb(127, 126, 126);
-  padding: 15px;
+  padding:0.5rem;
   display: row;
   position: relative;
 }
 
 .image-wrapper{
   width: 100%;
-  height: 60%;
-
+  height: 70%;
+  margin-bottom: 0.5rem;
   position: relative;
   object-fit: contain;
 }
 
+.text-hidden{
+  display: none;
+}
+
 .swiper {
   width:60vw;
-  height: 40vh;
+  height: 30vh;
   background-color:white;
 }
 
@@ -136,10 +140,10 @@ font-weight: 700;
   height: 50vh;
 }
 
-  .swiper {
+.swiper {
       width: 80vw;
       height: 40vh;
-    }
+}
 
 .card-wrapper {
     width: 80vw;
@@ -150,7 +154,11 @@ font-weight: 700;
     position: relative;
     border-radius: 5px;
   }
-    .image-wrapper {
+
+.text-hidden{
+  display: inline-block;
+}
+  .image-wrapper {
       width: 60vw;
       height: auto;
       position: relative;
