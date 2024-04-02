@@ -45,12 +45,13 @@ body, html {
 
 .roundImg{
   border-radius: 50%;
-  width: 35vw;
-  height: 35vw;
+  width: 30vw;
+  height: 30vw;
 }
 
 .introCardContainer {
-  padding:1.5rem 0.5rem;
+  padding:0.5rem 1rem;
+  margin: 0.5rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
