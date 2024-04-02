@@ -58,7 +58,7 @@ export default function Home() {
           id="titleStyle"
           className="mt-5 mb-10  text-2xl font-bold md:text-3xl "
         >
-          當季祭典
+          What&rsquo;s now
         </h1>
         <CurrentEvents />
       </section>
@@ -67,7 +67,7 @@ export default function Home() {
           id="titleStyle"
           className="mt-5 mb-10  text-2xl font-bold md:text-3xl "
         >
-          搜尋、分享、儲存喜歡的祭典!
+          How to start
         </h1>
 
         <div className="sm:flex sm:justify-center sm:items-center">
