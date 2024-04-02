@@ -14,18 +14,18 @@ export default function Header() {
 
   return (
     <>
-      <header className="z-50 px-20 fixed top-0 w-full h-[60px] md:h-[70px] flex justify-between items-center bg-yellow-400 global-padding ">
+      <header className="z-10 py-10 fixed top-0 p-3 w-full flex justify-between items-center bg-amber-300 lg:flex-col ">
         <Link href="/">
           <Image
             src="/logo-large-03.png"
             width="500"
             height="20"
             alt="logo"
-            className="sm:w-[200px]"
+            className="ml-20 w-[30vw] md:w-[20vw] lg:ml-0 lg:mb-10"
           />
         </Link>
 
-        <div className=" flex justify-between items-center text-black font-bold text-lg w-[400px]">
+        <div className="flex justify-between items-center text-black font-bold text-lg lg:w-[50vw] lg:text-2xl">
           <ul className="hidden lg:flex justify-around items-center w-full">
             <li className="hover:text-white">
               <Link href="/">首頁</Link>
@@ -58,8 +58,8 @@ export default function Header() {
           <div
             className={
               nav
-                ? "lg:none absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-yellow-400 text-center ease-in duration-300"
-                : "lg:none absolute top-0 left-[100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-yellow-400 text-center ease-in duration-300"
+                ? "lg:none absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-amber-300  text-center ease-in duration-300"
+                : "lg:none absolute top-0 left-[100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-amber-300    text-center ease-in duration-300"
             }
           >
             <ul>
