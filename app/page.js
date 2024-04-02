@@ -16,16 +16,16 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section id="greetSection" className="p-10">
+      <section id="greetSection" className="p-10 mt-10">
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col items-center  font-bold">
             <h1 id="titleStyle">About</h1>
-            <p className="text-lg text-center">
+            <p className="text-lg text-center md:text-xl md:leading-8">
               專為旅行愛好者打造的網站
               <br />
               提供搜尋和分享各種祭典資訊的平台
             </p>
-            <div className="my-2 w-[20vw] h-[5vh] flex justify-evenly items-center ">
+            <div className="my-5 w-[20vw] h-[5vh] flex justify-evenly items-center ">
               <div className="dot"></div>
               <div className="dot"></div>
               <div className="dot"></div>
@@ -33,8 +33,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative rounded-xl p-5 flex flex-col justify-center">
-            <div className=" flex flex-col justify-center text-center leading-1 text-sm sm:text-lg sm:leading-2 md:text-xl md:leading-6 lg:leading-loose">
+          <div className="relative">
+            <div className="p-10 bg-stone-100 flex flex-col items-center  justify-center text-center leading-1 text-sm sm:text-lg sm:leading-2 md:text-xl md:leading-6 lg:leading-loose">
               這裡有日本各種祭典活動!
               <br />
               也歡迎大家分享自己的祭典體驗!
@@ -52,7 +52,7 @@ export default function Home() {
       </section>
       <section
         id="currentEventSection"
-        className="flex flex-col items-center p-10 bg-amber-100"
+        className="flex flex-col items-center p-10 mt-10 bg-amber-100"
       >
         <h1
           id="titleStyle"
@@ -62,7 +62,7 @@ export default function Home() {
         </h1>
         <CurrentEvents />
       </section>
-      <section className="flex flex-col items-center p-10">
+      <section className="flex flex-col items-center p-10 mt-10">
         <h1
           id="titleStyle"
           className="mt-5 mb-10  text-2xl font-bold md:text-3xl "
