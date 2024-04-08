@@ -9,27 +9,10 @@ const EventCard = ({ event, favBtnHandler }) => {
       id={event.id}
       className="border-2 border-gray-200 w-[40vh] h-[60vh] p-1 rounded-lg relative hover:shadow-xl transition duration-300 ease-in-out cursor-pointer"
     >
-      {/* {event.isMyFav ? (
-        <GoHeartFill
-          className="cardIcon"
-          size={20}
-          color="red"
-          onClick={favBtnHandler}
-          data-id={event.id}
-        />
-      ) : (
-        <GoHeart
-          className="cardIcon "
-          size={20}
-          onClick={favBtnHandler}
-          data-id={event.id}
-        />
-      )} */}
-
       <Link href={`/events/${event.id}`}>
-        {/* <div className="tag flex rounded-b-lg items-center justify-center">
+        <div className="tag">
           <p>{event.feature}</p>
-        </div> */}
+        </div>
         <div className="w-full flex flex-col">
           <div className="w-full h-[30vh] relative">
             <Image
@@ -48,7 +31,7 @@ const EventCard = ({ event, favBtnHandler }) => {
               <p className="text-xs md:text-base">{event.description}</p>
             </div>
           </div>
-          <div className="border-t-[1px] border-stone-300 flex text-xs text-amber-500 mt-1 p-1 gap-1">
+          <div className="border-t-[1px] border-stone-300 flex text-xs text-stone-400 mt-1 p-1 gap-1">
             <p>#{event.season}</p>
             <p>#{event.city}</p>
             <div className="w-full flex justify-end">
