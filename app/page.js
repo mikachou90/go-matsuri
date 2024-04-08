@@ -6,7 +6,7 @@ import introText from "../app/introText";
 export default function Home() {
   return (
     <div id="mainPage">
-      <section id="bannerSection">
+      <section id="mainPageBanner">
         <div className="w-[70%] h-[60%] bg-white/80 p-2  rounded-xl flex flex-col justify-center items-center relative">
           <h1 className="font-bold text-2xl py-1 sm:text-3xl sm:py-5 xl:text-5xl xl:py-10">
             深度探索
