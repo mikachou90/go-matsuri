@@ -150,7 +150,7 @@ const Events = () => {
                     </button>
                   ))}
                 </div>
-                <div className="grid grid-cols-3 gap-1 grid-rows-3 mb-2 sm:grid-cols-4 sm:gird-rows-2 lg:grid-rows-1 lg:grid-cols-6 lg:gap-3">
+                <div className="grid grid-cols-2 ">
                   {cities.map((city) => (
                     <button
                       key={city}
