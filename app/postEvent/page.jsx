@@ -58,12 +58,19 @@ const PostEvent = () => {
   };
 
   return (
-    <div className="py-10 px-20 mt-20">
-      <div>
-        <p className="text-3xl font-bold mb-10 ">祭典情報新增</p>
-        <p className="font-bold mb-5 text-xl">
-          若你有最新的日本祭典情報，歡迎分享給我們!
-        </p>
+    <div id="postEventPage">
+      <section id="postPageBanner">
+        <div className="w-[70%] h-[60%] bg-white/80 p-2  rounded-xl flex flex-col justify-center items-center relative">
+          <p className="font-bold text-xs sm:text-lg xl:text-2xl">
+            若你有最新的日本祭典情報，歡迎分享給我們
+          </p>
+          <h1 className="font-bold text-2xl py-1 sm:text-3xl sm:py-5 xl:text-5xl ">
+            提供祭典
+          </h1>
+        </div>
+      </section>
+      <div id="layoutContainer">
+        <h1 className="my-3 text-base md:text-lg lg:text-xl">提供情報</h1>
         <form
           onSubmit={handleFormSubmit}
           method="post"
