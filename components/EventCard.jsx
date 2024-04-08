@@ -7,28 +7,28 @@ const EventCard = ({ event, favBtnHandler }) => {
     <div
       key={event.id}
       id={event.id}
-      className="border-2 border-gray-200 w-[40vh] h-[60vh] p-1 rounded-lg relative hover:shadow-xl transition duration-300 ease-in-out cursor-pointer"
+      className="border-2 border-gray-200 w-[40vh] h-[60vh] p-1 rounded-lg relative eventCardWrapper"
     >
       <Link href={`/events/${event.id}`}>
         <div className="tag">
           <p>{event.feature}</p>
         </div>
         <div className="w-full flex flex-col">
-          <div className="w-full h-[30vh] relative">
+          <div className="w-full h-[30vh] relative overflow-hidden">
             <Image
               src={event.picture || "/missing-pic.jpg"}
               alt="event picture"
-              className="rounded-lg"
+              className="cardImg"
               fill
             />
           </div>
 
-          <div className="flex flex-col mt-2">
-            <p className="text-xs font-bold truncate ... md:text-base">
+          <div className="flex flex-col my-2">
+            <p className="text-xs font-bold truncate ... md:text-sm">
               {event.name}
             </p>
             <div className="w-full h-[15vh] py-1 text-clip overflow-hidden ...">
-              <p className="text-xs md:text-base">{event.description}</p>
+              <p className="text-xs md:text-sm">{event.description}</p>
             </div>
           </div>
           <div className="border-t-[1px] border-stone-300 flex text-xs text-stone-400 mt-1 p-1 gap-1">

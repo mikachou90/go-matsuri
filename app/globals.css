@@ -149,8 +149,26 @@ font-weight: 700;
   z-index: 1;
 
   font-size: 14px;
+  font-weight: 600;
   color: rgb(245 158 11);
   writing-mode: vertical-lr;
+}
+
+.cardImg{
+  border-radius: 0.5rem;
+}
+
+.eventCardWrapper:hover {
+  .cardImg {
+    transform: scale(1.2);
+    transition: all ease-in-out 0.5s;
+  }
+
+  .tag {
+    transition: all ease-in-out 0.5s;
+    background-color: rgb(245 158 11);
+    color: white;
+  }
 }
 
 @media (min-width:640px) {
@@ -163,8 +181,8 @@ font-weight: 700;
 }
 
 .swiper {
-      width: 80vw;
-      height: 40vh;
+  width: 80vw;
+  height: 40vh;
 }
 
 .card-wrapper {
@@ -180,15 +198,16 @@ font-weight: 700;
 .text-hidden{
     display: inline-block;
   }
-  .image-wrapper {
-      width: 60vw;
-      height: auto;
-      position: relative;
-      object-fit: contain;
-    }
 
-  .btn{
-    font-size: 18px;
+.image-wrapper {
+    width: 60vw;
+    height: auto;
+    position: relative;
+    object-fit: contain;
+  }
+
+.btn{
+  font-size: 18px;
   }
 }
 
