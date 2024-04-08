@@ -132,7 +132,9 @@ const Events = () => {
             className="mt-5 flex
         flex-col "
           >
-            <div className="text-2xl mb-5 flex items-center">快速篩選</div>
+            <div className="text-sm mb-5 flex items-center md:text-xl">
+              快速篩選
+            </div>
             <div className="flex flex-col sm:flex-row sm:justify-between">
               <div>
                 <div className="mb-2 grid grid-cols-3 gap-3  sm:grid-cols-4 lg:gap-3">
@@ -171,7 +173,7 @@ const Events = () => {
               </div>
               <div className="flex flex-col justify-center">
                 <button
-                  className="w-[85px] h-[45px] btn hover:bg-zinc-500 hover:text-white  border-2 border-zinc-500 "
+                  className="w-[85px] h-[45px] mt-2 btn hover:bg-zinc-500 hover:text-white  border-2 border-zinc-500 "
                   onClick={() => handleButtonClick({ clear: true })}
                 >
                   重設

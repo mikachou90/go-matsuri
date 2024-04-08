@@ -7,7 +7,7 @@ const EventCard = ({ event, favBtnHandler }) => {
     <div
       key={event.id}
       id={event.id}
-      className="border-2 border-gray-200 w-[40vh] h-[60vh] p-1 rounded-lg relative eventCardWrapper"
+      className="w-[40vh] h-[60vh] p-1 rounded-lg relative eventCardWrapper"
     >
       <Link href={`/events/${event.id}`}>
         <div className="tag">
