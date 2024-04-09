@@ -129,56 +129,59 @@ const Events = () => {
       <div id="layoutContainer">
         <section id="filterBtn" className="mb-10">
           <div
-            className="mt-5 flex
-        flex-col "
+            className="my-5 py-2 flex
+        flex-col items-center"
           >
-            <div className="text-sm mb-5 flex items-center md:text-xl">
-              快速篩選
+            <div>
+              <h1 className="text-lg">分類篩選</h1>
+              <p></p>
             </div>
-            <div className="flex flex-col sm:flex-row sm:justify-between">
-              <div>
-                <div className="mb-2 grid grid-cols-3 gap-3  sm:grid-cols-4 lg:gap-3">
-                  {seasons.map((season) => (
-                    <button
-                      key={season}
-                      className={`btn border-2 border-amber-500 hover:bg-amber-500 hover:text-white ${
-                        currentParams.season === season ? "activeSeasonBtn" : ""
-                      }`}
-                      onClick={() =>
-                        handleButtonClick({ season, city: currentParams.city })
-                      }
-                    >
-                      {season}
-                    </button>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 ">
-                  {cities.map((city) => (
-                    <button
-                      key={city}
-                      className={` btn hover:bg-lime-500 hover:text-white border-2 border-lime-500 ${
-                        currentParams.city === city ? "activeCityBtn" : ""
-                      }`}
-                      onClick={() =>
-                        handleButtonClick({
-                          city,
-                          season: currentParams.season,
-                        })
-                      }
-                    >
-                      {city}
-                    </button>
-                  ))}
-                </div>
+
+            <div className="w-full bg-stone-100 rounded-lg md:w-[60%]">
+              <div id="btnWrapper">
+                <p>季節:</p>
+                {seasons.map((season) => (
+                  <button
+                    key={season}
+                    className={`btn ${
+                      currentParams.season === season ? "activeBtn" : ""
+                    }`}
+                    onClick={() =>
+                      handleButtonClick({ season, city: currentParams.city })
+                    }
+                  >
+                    {season}
+                  </button>
+                ))}
               </div>
-              <div className="flex flex-col justify-center">
-                <button
-                  className="w-[85px] h-[45px] mt-2 btn hover:bg-zinc-500 hover:text-white  border-2 border-zinc-500 "
-                  onClick={() => handleButtonClick({ clear: true })}
-                >
-                  重設
-                </button>
+              <div id="btnWrapper">
+                <p>城市:</p>
+                <div></div>
+                {cities.map((city) => (
+                  <button
+                    key={city}
+                    className={` btn ${
+                      currentParams.city === city ? "activeBtn" : ""
+                    }`}
+                    onClick={() =>
+                      handleButtonClick({
+                        city,
+                        season: currentParams.season,
+                      })
+                    }
+                  >
+                    {city}
+                  </button>
+                ))}
               </div>
+            </div>
+            <div className="mt-3">
+              <button
+                className="btn"
+                onClick={() => handleButtonClick({ clear: true })}
+              >
+                重設
+              </button>
             </div>
           </div>
         </section>
