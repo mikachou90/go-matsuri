@@ -192,6 +192,21 @@ border:2px solid rgb(251 191 36);
   align-items: center;
 }
 
+#myFavPageBanner{
+  margin-top: 3rem;
+    background: url(/myFav-banner.jpg);
+    background-size: 2400px 1200px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width:640px) {
 #mainPageBanner {
   height: 50vh;
@@ -202,6 +217,10 @@ border:2px solid rgb(251 191 36);
 }
 
 #postPageBanner{
+  height: 50vh;
+}
+
+#myFavPageBanner {
   height: 50vh;
 }
 
@@ -286,6 +305,10 @@ border:2px solid rgb(251 191 36);
     }
 
     #postPageBanner{
+      height: 70vh;
+    }
+
+    #myFavPageBanner {
       height: 70vh;
     }
 
