@@ -69,14 +69,10 @@ const PostEvent = () => {
           </h1>
         </div>
       </section>
-      <div id="layoutContainer">
-        <h1 className="my-3 text-base md:text-lg lg:text-xl">提供情報</h1>
-        <form
-          onSubmit={handleFormSubmit}
-          method="post"
-          className="w-[250px] md:w-[700px] lg:w-[1000px] h-800 "
-        >
-          <div className=" grid text-lg gap-4  md:grid-cols-2  ">
+      <section id="layoutContainer" className="flex flex-col items-center">
+        <p className="my-5 text-lg font-bold">分享祭典資訊</p>
+        <form onSubmit={handleFormSubmit} method="post" className="w-[80vw]">
+          <div className=" grid text-base gap-4  md:grid-cols-2  ">
             <label htmlFor="city" className="md:mb-4">
               請選擇舉辦城市:
               <select
@@ -208,11 +204,11 @@ const PostEvent = () => {
             </label>
           </div>
 
-          <div>
-            <label htmlFor="description" className="text-lg">
-              簡述(10-500字):
+          <div className="mt-5">
+            <label htmlFor="description">
+              祭典活動簡述(10-500字):
               <textarea
-                className="bg-yellow-500 rounded-md text-white w-full h-[80px] resize-none"
+                className="bg-yellow-500 rounded-md text-white w-full h-[20vh] resize-none"
                 type="text"
                 id="description"
                 name="description"
@@ -230,7 +226,7 @@ const PostEvent = () => {
             確認送出
           </button>
         </form>
-      </div>
+      </section>
     </div>
   );
 };

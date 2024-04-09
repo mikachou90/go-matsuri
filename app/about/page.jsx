@@ -14,7 +14,7 @@ const page = () => {
               alt="event image"
               className="sm:w-full sm:h-60 object-cover"
             />
-            <div className="text-2xl font-bold my-10 text-zinc-600 ">
+            <div className="text-2xl font-bold my-10 ">
               <p className="leading-10 mb-5">Make your journey even better!</p>
               <p className="leading-10 ">
                 一個祭典、一個活動都是可以接觸一個國家文化的方式
