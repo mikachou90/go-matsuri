@@ -160,10 +160,6 @@ border:2px solid rgb(251 191 36);
   writing-mode: vertical-lr;
 }
 
-.cardImg{
-  border-radius: 0.5rem;
-}
-
 .eventCardWrapper:hover {
   .cardImg {
     transform: scale(1.2);

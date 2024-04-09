@@ -70,7 +70,7 @@ const PostEvent = () => {
         </div>
       </section>
       <section id="layoutContainer" className="flex flex-col items-center">
-        <p className="my-5 text-lg font-bold">分享祭典資訊</p>
+        <p className="my-10 text-lg font-bold">分享祭典資訊</p>
         <form onSubmit={handleFormSubmit} method="post" className="w-[80vw]">
           <div className=" grid text-base gap-4  md:grid-cols-2  ">
             <label htmlFor="city" className="md:mb-4">
