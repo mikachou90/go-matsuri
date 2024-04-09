@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { getDb } from "../../utils/firebaseInit";
 import { ref, onValue, get, update } from "firebase/database";
 import EventCard from "../../components/EventCard";
+import { GoSearch } from "react-icons/go";
 
 const MyFavList = () => {
   const [eventData, setEventsData] = useState({});
@@ -76,8 +77,12 @@ const MyFavList = () => {
       </section>
 
       <section id="layoutContainer" className="my-10">
-        <Link href="events">
-          <p>回到祭典一覽</p>
+        <Link
+          href="events"
+          className="w-[15vw] flex items-center text-base font-bold cursor-pointer hover:text-amber-500 transition-all duration-300 ease-in-out"
+        >
+          <GoSearch />
+          <p className="ml-1">回到祭典一覽</p>
         </Link>
 
         <div className="mt-5 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
