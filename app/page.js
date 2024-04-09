@@ -34,7 +34,7 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="p-10 bg-stone-100 flex flex-col items-center  justify-center text-center leading-1 text-sm sm:text-lg sm:leading-2 md:text-xl md:leading-6 lg:leading-loose">
+            <div className="p-10 bg-stone-100 shadow-md flex flex-col items-center  justify-center text-center leading-1 text-sm md:text-base md:leading-6 lg:leading-loose">
               這裡有日本各種祭典活動!
               <br />
               也歡迎大家分享自己的祭典體驗!

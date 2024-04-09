@@ -133,13 +133,13 @@ const Events = () => {
         flex-col items-center"
           >
             <div>
-              <h1 className="text-lg">分類篩選</h1>
+              <h1 className="text-lg font-bold">分類篩選</h1>
               <p></p>
             </div>
 
-            <div className="w-full bg-stone-100 rounded-lg md:w-[60%]">
+            <div className="w-full bg-stone-100 rounded-lg shadow-md md:w-[60%]">
               <div id="btnWrapper">
-                <p>季節:</p>
+                <p className="font-bold">季節:</p>
                 {seasons.map((season) => (
                   <button
                     key={season}
@@ -155,7 +155,7 @@ const Events = () => {
                 ))}
               </div>
               <div id="btnWrapper">
-                <p>城市:</p>
+                <p className="font-bold">城市:</p>
                 <div></div>
                 {cities.map((city) => (
                   <button
