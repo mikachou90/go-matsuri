@@ -31,16 +31,13 @@ export default function Header() {
               <Link href="/">首頁</Link>
             </li>
             <li className="hover:text-white">
-              <Link href="/events">祭典一覽</Link>
+              <Link href="/events">探索祭典</Link>
             </li>
             <li className="hover:text-white">
               <Link href="/postEvent">提供祭典</Link>
             </li>
             <li className="hover:text-white">
               <Link href="/myFavList">我的祭典</Link>
-            </li>
-            <li className="hover:text-white">
-              <Link href="/about">關於本站</Link>
             </li>
           </ul>
 
@@ -68,7 +65,7 @@ export default function Header() {
               </li>
               <li className="text-xl  mb-5 hover:text-white">
                 <Link href="/events" onClick={handleMobileNav}>
-                  祭典一覽
+                  探索祭典
                 </Link>
               </li>
 
@@ -80,11 +77,6 @@ export default function Header() {
               <li className="text-xl  mb-5 hover:text-white">
                 <Link href="/myFavList" onClick={handleMobileNav}>
                   我的祭典
-                </Link>
-              </li>
-              <li className="text-xl mb-5 hover:text-white">
-                <Link href="/about" onClick={handleMobileNav}>
-                  關於本站
                 </Link>
               </li>
             </ul>
