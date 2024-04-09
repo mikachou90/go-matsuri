@@ -20,10 +20,10 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col items-center  font-bold">
             <h1 id="titleStyle">About</h1>
-            <p className="text-lg text-center md:text-xl md:leading-8">
-              專為旅行愛好者打造的網站
+            <p className="text-base text-center md:text-lg md:leading-8">
+              一個祭典、一個活動都是可以接觸一個國家文化的方式
               <br />
-              提供搜尋和分享各種祭典資訊的平台
+              為更豐富旅行的意義，就從參與祭典開始吧!
             </p>
             <div className="my-5 w-[20vw] h-[5vh] flex justify-evenly items-center ">
               <div className="dot"></div>
@@ -35,9 +35,11 @@ export default function Home() {
 
           <div className="relative">
             <div className="p-10 bg-stone-100 shadow-md flex flex-col items-center  justify-center text-center leading-1 text-sm md:text-base md:leading-6 lg:leading-loose">
-              這裡有日本各種祭典活動!
+              「Matsuri」一詞為日文「祭典」之意
               <br />
-              也歡迎大家分享自己的祭典體驗!
+              這是專為旅行愛好者打造的網站
+              <br />
+              提供搜尋和分享各種祭典資訊的平台
               <br />
               這個平台不僅是一個資訊庫，更是一個共享和交流的社區。
               <br />
