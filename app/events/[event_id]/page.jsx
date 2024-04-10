@@ -54,7 +54,7 @@ const Event = ({ params }) => {
           </div>
 
           <div className="py-5 w-full text-sm md:text-base">
-            <div className="bg-amber-50 p-5 rounded-lg text-center leading-6">
+            <div className="bg-amber-200 p-5 rounded-lg text-center leading-6">
               <p>
                 {data.description}
                 <br />
@@ -66,7 +66,7 @@ const Event = ({ params }) => {
                 <p className="mx-5">日期</p>
                 <p>{data.period}</p>
               </div>
-              <div className="flex bg-amber-50 py-1">
+              <div className="flex bg-amber-200 py-1">
                 <p className="mx-5">地點</p>
                 <p>{data.location}</p>
               </div>
