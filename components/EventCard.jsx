@@ -31,24 +31,30 @@ const EventCard = ({ event, favBtnHandler }) => {
               <p className="text-xs md:text-sm">{event.description}</p>
             </div>
           </div>
-          <div className="border-t-[1px] border-stone-300 flex text-xs text-stone-400 mt-1 p-1 gap-1">
-            <p>#{event.season}</p>
-            <p>#{event.city}</p>
-            <div className="w-full flex justify-end">
-              {event.isMyFav ? (
-                <GoHeartFill
-                  size={20}
-                  color="red"
-                  onClick={favBtnHandler}
-                  data-id={event.id}
-                />
-              ) : (
-                <GoHeart size={20} onClick={favBtnHandler} data-id={event.id} />
-              )}
-            </div>
-          </div>
         </div>
       </Link>
+      <div className="border-t-[1px] border-stone-300 flex text-xs text-stone-400 mt-1 p-1 gap-1">
+        <p>#{event.season}</p>
+        <p>#{event.city}</p>
+        <div className="w-full flex justify-end">
+          {event.isMyFav ? (
+            <GoHeartFill
+              size={20}
+              color="red"
+              onClick={favBtnHandler}
+              data-id={event.id}
+              className="cursor-pointer"
+            />
+          ) : (
+            <GoHeart
+              size={20}
+              onClick={favBtnHandler}
+              data-id={event.id}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };
