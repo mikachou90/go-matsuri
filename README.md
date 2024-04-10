@@ -4,8 +4,8 @@
 
 ![image](/app/assets/RWD-display.png)
 
-Last updated: 02/19/2024
-近期更新: 02/19/2024
+Last updated: 04/10/2024
+近期更新: 04/10/2024
 
 ## Introduction 介紹
 
