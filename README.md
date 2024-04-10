@@ -2,7 +2,7 @@
 
 ### Live Demo https://go-matsuri-demo.vercel.app/
 
-![image](/app/assets/RWD-display.png)
+![image](/app/assets/RWD_mockup.png)
 
 Last updated: 04/10/2024
 近期更新: 04/10/2024
@@ -25,32 +25,32 @@ Due to my past experiences in travel services and self-guided trips, I hope to s
 
 On home page, it will dynamically recommends the first four festivals of the season closest to the users' visiting date.  
 首頁會以使用者進入網站的日期來推薦當季前四個祭典。
-![image](/app/assets/homepage.png)
+![image](/app/assets/homePage.png)
 
 --
 
 Users can overview all events in '/events' page. By clicking the filter buttons, the events can be filtered by season and city.
 Also, users can like any events by clicking heart icon on the event card and it will show in '/myFavList' page.  
 在「祭典一覽」頁面可以瀏覽全部祭典，點選上方篩選按紐可以依照季節和城市來篩選祭典。此外，點擊祭典卡片的愛心 icon 可以將祭典加入「我的祭典」頁面。
-![image](/app/assets/eventpage.png)
+![image](/app/assets/eventPage.png)
 
 --
 
 In '/myFavList' page, users can find the events they like. By clicking the filled heart icon, the event will be removed from this page.  
 使用者可以在「我的祭典」頁面瀏覽喜愛的祭典。點選實心愛心可以將祭典從頁面移除。
-![image](/app/assets/myEvent.png)
+![image](/app/assets/myFavListPage.png)
 
 --
 
 Users can read event detail by clicking event cards.  
 點選祭典卡片可以瀏覽祭典詳細資訊。
-![image](/app/assets/eventDetail.png)
+![image](/app/assets/eventDetailPage.png)
 
 --
 
 Also, users can update events as they want by fill this form. After submitting, the new events will show in the '/events' page.  
 在此頁面,使用者可以填寫此表格以新增祭典。新增完後可以在「祭典一覽」看到新增的祭典。
-![image](/app/assets/offerEvent.png)
+![image](/app/assets/postEventPage.png)
 
 ## Getting Started
 
