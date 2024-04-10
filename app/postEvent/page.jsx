@@ -58,18 +58,21 @@ const PostEvent = () => {
   };
 
   return (
-    <div className="py-10 px-20 mt-20">
-      <div>
-        <p className="text-3xl font-bold mb-10 ">祭典情報新增</p>
-        <p className="font-bold mb-5 text-xl">
-          若你有最新的日本祭典情報，歡迎分享給我們!
-        </p>
-        <form
-          onSubmit={handleFormSubmit}
-          method="post"
-          className="w-[250px] md:w-[700px] lg:w-[1000px] h-800 "
-        >
-          <div className=" grid text-lg gap-4  md:grid-cols-2  ">
+    <div id="postEventPage">
+      <section id="postPageBanner">
+        <div className="w-[70%] h-[60%] bg-white/80 p-2  rounded-xl flex flex-col justify-center items-center relative">
+          <p className="font-bold text-xs sm:text-lg xl:text-2xl">
+            若你有最新的日本祭典情報，歡迎分享給我們
+          </p>
+          <h1 className="font-bold text-2xl py-1 sm:text-3xl sm:py-5 xl:text-5xl ">
+            提供祭典
+          </h1>
+        </div>
+      </section>
+      <section id="layoutContainer" className="flex flex-col items-center">
+        <p className="my-10 text-lg font-bold">分享祭典資訊</p>
+        <form onSubmit={handleFormSubmit} method="post" className="w-[80vw]">
+          <div className=" grid text-base gap-4  md:grid-cols-2  ">
             <label htmlFor="city" className="md:mb-4">
               請選擇舉辦城市:
               <select
@@ -201,11 +204,11 @@ const PostEvent = () => {
             </label>
           </div>
 
-          <div>
-            <label htmlFor="description" className="text-lg">
-              簡述(10-500字):
+          <div className="mt-5">
+            <label htmlFor="description">
+              祭典活動簡述(10-500字):
               <textarea
-                className="bg-yellow-500 rounded-md text-white w-full h-[80px] resize-none"
+                className="bg-yellow-500 rounded-md text-white w-full h-[20vh] resize-none"
                 type="text"
                 id="description"
                 name="description"
@@ -223,7 +226,7 @@ const PostEvent = () => {
             確認送出
           </button>
         </form>
-      </div>
+      </section>
     </div>
   );
 };

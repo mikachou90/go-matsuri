@@ -4,59 +4,58 @@ import Image from "next/image";
 
 const EventCard = ({ event, favBtnHandler }) => {
   return (
-    <>
-      <div
-        key={event.id}
-        id={event.id}
-        className="bg-stone-200 w-[250px] h-[350px] rounded-lg flex flex-col justify-center items-center p-2 relative hover:shadow-xl transition duration-300 ease-in-out cursor-pointer"
-      >
-        {event.isMyFav ? (
-          <GoHeartFill
-            className="cardIcon "
-            size={25}
-            color="red"
-            onClick={favBtnHandler}
-            data-id={event.id}
-          />
-        ) : (
-          <GoHeart
-            className="cardIcon "
-            size={25}
-            onClick={favBtnHandler}
-            data-id={event.id}
-          />
-        )}
-
-        <Link href={`/events/${event.id}`}>
-          <div className="tag flex rounded-b-lg items-center justify-center">
-            <p>{event.feature}</p>
+    <div
+      key={event.id}
+      id={event.id}
+      className="w-[40vh] h-[60vh] p-1 rounded-lg relative eventCardWrapper"
+    >
+      <Link href={`/events/${event.id}`}>
+        <div className="tag">
+          <p>{event.feature}</p>
+        </div>
+        <div className="w-full flex flex-col">
+          <div className="w-full h-[30vh] relative overflow-hidden">
+            <Image
+              src={event.picture || "/missing-pic.jpg"}
+              alt="event picture"
+              className="cardImg"
+              fill
+            />
           </div>
-          <div className="flex flex-col items-center">
-            <div className="w-[160px] h-[140px] relative mt-2">
-              <Image
-                src={event.picture || "/missing-pic.jpg"}
-                alt="event picture"
-                fill
-              />
-            </div>
 
-            <div className="mt-5 flex flex-col items-center">
-              <p className="text-xl font-bold text-center">{event.name}</p>
-
-              <p className="text-lg">{event.period}</p>
-            </div>
-            <div className="flex justify-center gap-2">
-              <div className="text-sm p-2 rounded-lg flex bg-amber-500 text-white mt-2">
-                <p className="">{event.season}</p>
-              </div>
-              <div className="text-sm p-2 rounded-lg flex bg-lime-500 text-white mt-2">
-                <p>{event.city}</p>
-              </div>
+          <div className="flex flex-col my-2">
+            <p className="text-xs font-bold truncate ... md:text-sm">
+              {event.name}
+            </p>
+            <div className="w-full h-[15vh] py-1 text-clip overflow-hidden ...">
+              <p className="text-xs md:text-sm">{event.description}</p>
             </div>
           </div>
-        </Link>
+        </div>
+      </Link>
+      <div className="border-t-[1px] border-stone-300 flex text-xs text-stone-400 mt-1 p-1 gap-1">
+        <p>#{event.season}</p>
+        <p>#{event.city}</p>
+        <div className="w-full flex justify-end">
+          {event.isMyFav ? (
+            <GoHeartFill
+              size={20}
+              color="red"
+              onClick={favBtnHandler}
+              data-id={event.id}
+              className="cursor-pointer"
+            />
+          ) : (
+            <GoHeart
+              size={20}
+              onClick={favBtnHandler}
+              data-id={event.id}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

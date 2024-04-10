@@ -7,35 +7,54 @@ body, html {
   height: 100%;
   width: 100%;
   position: relative;
-  
-  
+  background-color: rgb(250 250 249);
+  color:rgb(41 37 36);
 }
 
-#bannerSection {
-  margin-top: 5rem;
-  background-image: url(/banner.jpg);
+#layoutContainer{
+  padding: 0 1rem;
+}
+
+#mainPageBanner {
+  margin-top: 3rem;
+  background: url(/banner.jpg);
+  background-size: 2400px 1200px;
+  background-repeat: no-repeat;
   object-fit: cover;
   background-position: center;
   width:100%;
   height: 40vh;
-  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 #titleStyle{
-  padding: 1rem 1.5rem;
-  background-color: rgb(251 191 36);
-  border-radius: 40px 10px 60px 50px;
+ border-bottom: 2px solid rgb(245 158 11);
+ color:rgb(245 158 11);
+ margin-bottom: 2rem;
+ font-size: 1.5rem;
+}
+
+.dot{
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: rgb(252 211 77);
+  border-radius: 50%;
 }
 
 
 .roundImg{
   border-radius: 50%;
-  width: 35vw;
-  height: 35vw;
+  width: 30vw;
+  height: 30vw;
 }
 
 .introCardContainer {
-  padding:1.5rem 0.5rem;
+  padding:0.5rem 1rem;
+  margin: 0.5rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
@@ -50,24 +69,28 @@ border:2px solid rgb(251 191 36);
 
 .card-wrapper {
   width: 60vw;
-  height: 40vh;
+  height: 30vh;
   border: 1px solid rgb(127, 126, 126);
-  padding: 15px;
+  padding:0.5rem;
   display: row;
   position: relative;
 }
 
 .image-wrapper{
   width: 100%;
-  height: 60%;
-
+  height: 70%;
+  margin-bottom: 0.5rem;
   position: relative;
   object-fit: contain;
 }
 
+.text-hidden{
+  display: none;
+}
+
 .swiper {
   width:60vw;
-  height: 40vh;
+  height: 30vh;
   background-color:white;
 }
 
@@ -76,97 +99,147 @@ border:2px solid rgb(251 191 36);
   height: 100%;
 }
 
+#eventPageBanner{
+  margin-top: 3rem;
+  background: url(/banner-02.jpg);
+  background-size: 2400px 1200px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
+  width: 100%;
+  height: 40vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnWrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 ;
+  font-size: 0.875rem;
+}
 
 .btn {
-  font-size:14px;
-  padding: 5px;
-  color: black;
-  border-radius: 10px;
+  border:1px solid rgb(214 211 209);
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 10%;
+}
+
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
-.activeSeasonBtn {
-  background-color: rgb(245 158 11);
+.activeBtn {
+  background-color: rgb(168 162 158);
   color:white;
   font-weight: 700;
 }
 
-.activeCityBtn {
-background-color: rgb(132 204 22);
-color: white;
-font-weight: 700;
-}
-
 .tag {
   position: absolute;
-  width: 120px;
-  height: 30px;
-  background-color: rgb(121, 121, 121);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1.5rem;
+  height: 5rem;
+  background-color: white;
   top: 0px;
   right: 15px;
- font-size: 16px;
- color:white;
+  border:1px solid rgb(245 158 11);
+  z-index: 1;
 
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(245 158 11);
+  writing-mode: vertical-lr;
 }
 
-.cardIcon {
-  position: absolute;
-  top:10px;
-  left:15px;
+.eventCardWrapper:hover {
+  .cardImg {
+    transform: scale(1.2);
+    transition: all ease-in-out 0.5s;
+  }
+
+  .tag {
+    transition: all ease-in-out 0.5s;
+    background-color: rgb(245 158 11);
+    color: white;
+  }
 }
 
-@media (min-width:648px) {
+#postPageBanner{
+  margin-top: 3rem;
+  background: url(/banner.jpg);
+  background-size: 2400px 1200px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
+  width: 100%;
+  height: 40vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .swiper {
-      width: 80vw;
-      height: 40vh;
-    }
+#myFavPageBanner{
+  margin-top: 3rem;
+    background: url(/myFav-banner.jpg);
+    background-size: 2400px 1200px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:640px) {
+#mainPageBanner {
+  height: 50vh;
+}
+
+#eventPageBanner {
+  height: 50vh;
+}
+
+#postPageBanner{
+  height: 50vh;
+}
+
+#myFavPageBanner {
+  height: 50vh;
+}
+
+.swiper {
+  width: 80vw;
+  height: 40vh;
+}
 
 .card-wrapper {
     width: 80vw;
     height: 40vh;
     border: 1px solid rgb(174, 174, 174);
-    padding: 10px;
-    display: flex;
-    position: relative;
-    border-radius: 5px;
-  }
-    .image-wrapper {
-      width: 60vw;
-      height: auto;
-      position: relative;
-      object-fit: contain;
-    }
-
-  .btn{
-    font-size: 18px;
-  }
-}
-
-
-@media (min-width: 768px) {
- #bannerSection {
-    height: 50rem;
-  }
-    .roundImg {
-      border-radius: 50%;
-      width: 20vw;
-      height: 20vw;
-    }
-}
-
-@media (min-width: 1024px) {
-.card-wrapper {
-    width: 80vw;
-    height: 40vh;
-    border: 1px solid rgb(174, 174, 174);
-    padding: 10px;
+    padding: 0.5rem;
     display: flex;
     position: relative;
     border-radius: 5px;
   }
 
-  .image-wrapper {
+.text-hidden{
+    display: inline-block;
+  }
+
+.image-wrapper {
     width: 60vw;
     height: auto;
     position: relative;
@@ -174,7 +247,67 @@ font-weight: 700;
   }
 }
 
-@media screen and (min-width: 1280px) {
+
+@media (min-width: 768px) {
+    .roundImg {
+      border-radius: 50%;
+      width: 20vw;
+      height: 20vw;
+    }
+
+    .card-wrapper {
+      width: 80vw;
+      height: 40vh;
+      border: 1px solid rgb(174, 174, 174);
+      padding: 10px;
+      display: flex;
+      position: relative;
+      border-radius: 5px;
+    }
+    
+    .image-wrapper {
+      width: 60vw;
+      height: auto;
+      position: relative;
+      object-fit: contain;
+    }
+    .swiper{
+      width: 80vw;
+      height: 40vh;
+    }
+
+    #btnWrapper {
+      margin:2 0.5rem 0 0.5rem;;
+    }
+}
+
+@media (min-width: 1024px) {
+.card-wrapper {
+    height: 60vh;
+  }
+
+  .swiper{
+    height: 60vh;
+  }
+}
+
+@media  (min-width: 1280px) {
+  #mainPageBanner {
+      height: 70vh;
+    }
+
+    #eventPageBanner {
+      height: 70vh;
+    }
+
+    #postPageBanner{
+      height: 70vh;
+    }
+
+    #myFavPageBanner {
+      height: 70vh;
+    }
+
   .roundImg {
     border-radius: 50%;
     width: 15vw;

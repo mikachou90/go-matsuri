@@ -114,22 +114,37 @@ const Events = () => {
   };
 
   return (
-    <div className="py-10 px-20 mt-20">
-      <h1 className="text-3xl font-bold">祭典一覽</h1>
-      <div className="mb-10">
-        <div
-          className="mt-5 flex
-        flex-col "
-        >
-          <div className="text-2xl mb-5 flex items-center">快速篩選</div>
-          <div className="flex flex-col sm:flex-row sm:justify-between">
+    <div id="eventPage">
+      <section id="eventPageBanner">
+        <div className="w-[70%] h-[60%] bg-white/80 p-2  rounded-xl flex flex-col justify-center items-center relative">
+          <p className="font-bold text-xs sm:text-lg xl:text-2xl">
+            為你的旅程增添更多色彩!
+          </p>
+          <h1 className="font-bold text-2xl py-1 sm:text-3xl sm:py-5 xl:text-5xl ">
+            探索祭典
+          </h1>
+        </div>
+      </section>
+
+      <div id="layoutContainer">
+        <section id="filterBtn" className="mb-10">
+          <div
+            className="my-5 py-2 flex
+        flex-col items-center"
+          >
             <div>
-              <div className="mb-2 grid grid-cols-3 gap-3  sm:grid-cols-4 lg:gap-3">
+              <h1 className="text-lg font-bold">分類篩選</h1>
+              <p></p>
+            </div>
+
+            <div className="w-full bg-stone-100 rounded-lg shadow-md md:w-[60%]">
+              <div id="btnWrapper">
+                <p className="font-bold">季節:</p>
                 {seasons.map((season) => (
                   <button
                     key={season}
-                    className={`btn border-2 border-amber-500 hover:bg-amber-500 hover:text-white ${
-                      currentParams.season === season ? "activeSeasonBtn" : ""
+                    className={`btn ${
+                      currentParams.season === season ? "activeBtn" : ""
                     }`}
                     onClick={() =>
                       handleButtonClick({ season, city: currentParams.city })
@@ -139,15 +154,20 @@ const Events = () => {
                   </button>
                 ))}
               </div>
-              <div className="grid grid-cols-3 gap-1 grid-rows-3 mb-2 sm:grid-cols-4 sm:gird-rows-2 lg:grid-rows-1 lg:grid-cols-6 lg:gap-3">
+              <div id="btnWrapper">
+                <p className="font-bold">城市:</p>
+                <div></div>
                 {cities.map((city) => (
                   <button
                     key={city}
-                    className={` btn hover:bg-lime-500 hover:text-white border-2 border-lime-500 ${
-                      currentParams.city === city ? "activeCityBtn" : ""
+                    className={` btn ${
+                      currentParams.city === city ? "activeBtn" : ""
                     }`}
                     onClick={() =>
-                      handleButtonClick({ city, season: currentParams.season })
+                      handleButtonClick({
+                        city,
+                        season: currentParams.season,
+                      })
                     }
                   >
                     {city}
@@ -155,20 +175,21 @@ const Events = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="mt-3">
               <button
-                className="w-[85px] h-[45px] btn hover:bg-zinc-500 hover:text-white  border-2 border-zinc-500 "
+                className="btn"
                 onClick={() => handleButtonClick({ clear: true })}
               >
                 重設
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div>
-        <div className="mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12">
+        <section
+          id="eventCards"
+          className="mb-10 grid grid-cols-1 gap-8 justify-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12"
+        >
           {filteredData?.length > 0 ? (
             filteredData.map((event) => {
               return (
@@ -182,7 +203,7 @@ const Events = () => {
               抱歉，目前尚未有這類慶典情報!
             </div>
           )}
-        </div>
+        </section>
       </div>
     </div>
   );

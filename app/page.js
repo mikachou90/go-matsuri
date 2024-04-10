@@ -6,41 +6,70 @@ import introText from "../app/introText";
 export default function Home() {
   return (
     <div id="mainPage">
-      <section id="bannerSection" className=""></section>
-      <section id="greetSection" className="flex flex-col items-center p-10">
-        <h1
-          id="titleStyle"
-          className="mt-5 mb-10 text-2xl font-bold md:text-3xl"
-        >
-          About
-        </h1>
-        <p className="px-10 text-lg leading-4  sm:text-xl md:px-20 ">
-          「Go
-          Matsuri」是一個專為旅行愛好者打造的網站，提供搜尋和分享各種祭典資訊的平台。
-          <br />
-          無論您是正在計劃前往日本旅行，或是對當地文化感興趣，透過「Go
-          Matsuri」，您可以輕鬆搜索到各種祭典活動，從傳統的神社祭典到現代浪漫的燈飾活動，應有盡有。除了搜索功能外，我們還歡迎用戶分享自己的祭典體驗，讓更多人受益。這個平台不僅是一個資訊庫，更是一個共享和交流的社區。無論您是想獨自探索，還是與他人分享您的旅程，「Go
-          Matsuri」都是您不容錯過的旅行好幫手。立即加入我們，探索日本有趣的祭典世界！
-        </p>
+      <section id="mainPageBanner">
+        <div className="w-[70%] h-[60%] bg-white/80 p-2  rounded-xl flex flex-col justify-center items-center relative">
+          <h1 className="font-bold text-2xl py-1 sm:text-3xl sm:py-5 xl:text-5xl xl:py-10">
+            深度探索
+          </h1>
+          <p className="font-bold text-xs sm:text-lg xl:text-3xl">
+            找尋與分享在旅途中的美好體驗!
+          </p>
+        </div>
+      </section>
+      <section id="greetSection" className="p-10 mt-10">
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center  font-bold">
+            <h1 id="titleStyle">About</h1>
+            <p className="text-base text-center md:text-lg md:leading-8">
+              一個祭典、一個活動都是可以接觸一個國家文化的方式
+              <br />
+              為更豐富旅行的意義，就從參與祭典開始吧!
+            </p>
+            <div className="my-5 w-[20vw] h-[5vh] flex justify-evenly items-center ">
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="p-10 bg-stone-100 shadow-md flex flex-col items-center  justify-center text-center leading-1 text-sm md:text-base md:leading-6 lg:leading-loose">
+              「Matsuri」一詞為日文「祭典」之意
+              <br />
+              這是專為旅行愛好者打造的網站
+              <br />
+              提供搜尋和分享各種祭典資訊的平台
+              <br />
+              這個平台不僅是一個資訊庫，更是一個共享和交流的社區。
+              <br />
+              無論您是想獨自探索，還是與他人分享您的旅程
+              <br />
+              「Go Matsuri」都是您不容錯過的旅行好幫手。
+              <br />
+              快來加入我們，探索日本有趣的祭典世界！
+            </div>
+          </div>
+        </div>
       </section>
       <section
         id="currentEventSection"
-        className="flex flex-col items-center p-10 bg-amber-100"
+        className="flex flex-col items-center p-10 mt-10 bg-amber-100"
       >
         <h1
           id="titleStyle"
           className="mt-5 mb-10  text-2xl font-bold md:text-3xl "
         >
-          當季祭典
+          What&rsquo;s now
         </h1>
         <CurrentEvents />
       </section>
-      <section className="flex flex-col items-center p-10">
+      <section className="flex flex-col items-center p-10 mt-10">
         <h1
           id="titleStyle"
           className="mt-5 mb-10  text-2xl font-bold md:text-3xl "
         >
-          搜尋、分享、儲存喜歡的祭典!
+          How to start
         </h1>
 
         <div className="sm:flex sm:justify-center sm:items-center">
