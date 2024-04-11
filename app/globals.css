@@ -62,10 +62,10 @@ body, html {
   flex-direction: column;
 }
 
-.introCardContainer:hover{
+/* .introCardContainer:hover{
 border:2px solid rgb(251 191 36);
  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+} */
 
 .card-wrapper {
   width: 60vw;
@@ -269,14 +269,6 @@ border:2px solid rgb(251 191 36);
     }
 }
 
-@media (min-width: 1024px) {
-/* .card-wrapper, .swiper {
-  width: 30vw;
-    height: 20vh;
-  } */
-
-}
-
 @media  (min-width: 1280px) {
   #mainPageBanner,
     #eventPageBanner,
@@ -292,8 +284,8 @@ border:2px solid rgb(251 191 36);
 
   .roundImg {
     border-radius: 50%;
-    width: 15vw;
-    height: 15vw;
+    width: 10vw;
+    height: 10vw;
   }
   
 }
