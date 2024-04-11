@@ -204,19 +204,7 @@ border:2px solid rgb(251 191 36);
 }
 
 @media (min-width:640px) {
-#mainPageBanner {
-  height: 50vh;
-}
-
-#eventPageBanner {
-  height: 50vh;
-}
-
-#postPageBanner{
-  height: 50vh;
-}
-
-#myFavPageBanner {
+#mainPageBanner, #eventPageBanner, #postPageBanner, #myFavPageBanner {
   height: 50vh;
 }
 
@@ -292,18 +280,9 @@ border:2px solid rgb(251 191 36);
 }
 
 @media  (min-width: 1280px) {
-  #mainPageBanner {
-      height: 70vh;
-    }
-
-    #eventPageBanner {
-      height: 70vh;
-    }
-
-    #postPageBanner{
-      height: 70vh;
-    }
-
+  #mainPageBanner,
+    #eventPageBanner,
+    #postPageBanner,
     #myFavPageBanner {
       height: 70vh;
     }
