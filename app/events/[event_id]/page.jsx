@@ -61,16 +61,16 @@ const Event = ({ params }) => {
               </p>
             </div>
             <br />
-            <div className="h-[25vh] flex flex-col justify-around">
-              <div className="flex py-1">
+            <div className="h-[25vh] flex flex-col justify-around  ">
+              <div className="flex py-1 border-b-[2px] border-amber-200">
                 <p className="mx-5">日期</p>
                 <p>{data.period}</p>
               </div>
-              <div className="flex bg-amber-200 py-1">
+              <div className="flex py-1 border-b-[2px] border-amber-200">
                 <p className="mx-5">地點</p>
                 <p>{data.location}</p>
               </div>
-              <div className="flex py-1">
+              <div className="flex py-1  border-b-[2px] border-amber-200">
                 <p className="mx-5">交通</p>
                 <p>{data.station}</p>
               </div>
