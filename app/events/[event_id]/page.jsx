@@ -43,8 +43,8 @@ const Event = ({ params }) => {
           <p>#{data.city}</p>
         </div>
 
-        <div className="p-5 flex flex-col items-center  lg:flex-row lg:mt-5">
-          <div className="relative w-full h-[40vh] md:h-[30vh] lg:h-[50vh] xl:h-[80vh] lg:mx-2">
+        <div className="w-full p-5 flex flex-col items-center  lg:flex-row lg:mt-5">
+          <div className="relative w-full h-[40vh] md:h-[30vh] lg:w-[50%] lg:h-[60vh] lg:mx-2">
             <Image
               src={data.picture || "/missing-pic.jpg"}
               alt="event picture"
@@ -53,7 +53,7 @@ const Event = ({ params }) => {
             />
           </div>
 
-          <div className="py-5 w-full text-sm md:text-base">
+          <div className="py-5 w-full text-sm md:text-base lg:w-[50%] lg:h-[60vh]">
             <div className="bg-amber-200 p-5 rounded-lg text-center leading-6">
               <p>
                 {data.description}
