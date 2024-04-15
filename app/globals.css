@@ -160,6 +160,13 @@ border:2px solid rgb(251 191 36);
   writing-mode: vertical-lr;
 }
 
+.eventCardWrapper{
+  position: relative;
+  padding: 0.5rem;
+  width: 40vw;
+  height: 30vh;
+}
+
 .eventCardWrapper:hover {
   .cardImg {
     transform: scale(1.2);
@@ -171,6 +178,14 @@ border:2px solid rgb(251 191 36);
     background-color: rgb(245 158 11);
     color: white;
   }
+}
+
+.eventCardTextWrapper{
+  margin: 0.2rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 #postPageBanner{
@@ -267,6 +282,18 @@ border:2px solid rgb(251 191 36);
     #btnWrapper {
       margin:2 0.5rem 0 0.5rem;;
     }
+
+    .eventCardWrapper {
+      width: 30vw;
+    }
+
+    .eventCardTextWrapper {
+      margin: 0.2rem 0;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
 }
 
 @media  (min-width: 1280px) {
@@ -287,5 +314,17 @@ border:2px solid rgb(251 191 36);
     width: 10vw;
     height: 10vw;
   }
+
+  .eventCardWrapper {
+      width: 22vw;
+      height: 30vh;
+    }
   
+}
+
+@media (min-width: 1536px) {
+  .eventCardWrapper {
+      width: 15vw;
+      height: 32vh;
+    }
 }
