@@ -62,11 +62,6 @@ body, html {
   flex-direction: column;
 }
 
-/* .introCardContainer:hover{
-border:2px solid rgb(251 191 36);
- box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-} */
-
 .card-wrapper {
   width: 60vw;
   height: 30vh;
