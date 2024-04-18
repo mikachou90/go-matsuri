@@ -213,93 +213,24 @@ body, html {
     align-items: center;
 }
 
-@media (min-width:640px) {
-#mainPageBanner, #eventPageBanner, #postPageBanner, #myFavPageBanner {
-  height: 50vh;
-}
-
-.swiper {
-  width: 80vw;
-  height: 40vh;
-}
-
-.card-wrapper {
-    width: 80vw;
-    height: 40vh;
-    border: 1px solid rgb(174, 174, 174);
-    padding: 0.5rem;
-    display: flex;
-    position: relative;
-    border-radius: 5px;
-  }
-
-.text-hidden{
-    display: inline-block;
-  }
-
-.image-wrapper {
-    width: 60vw;
-    height: auto;
-    position: relative;
-    object-fit: contain;
-  }
-}
-
-
-@media (min-width: 768px) {
-    .roundImg {
-      border-radius: 50%;
-      width: 20vw;
-      height: 20vw;
-    }
-
-    .card-wrapper {
-      width: 80vw;
-      height: 40vh;
-      border: 1px solid rgb(174, 174, 174);
-      padding: 10px;
-      display: flex;
-      position: relative;
-      border-radius: 5px;
-    }
-    
-    .image-wrapper {
-      width: 60vw;
-      height: auto;
-      position: relative;
-      object-fit: contain;
-    }
-    .swiper{
-      width: 80vw;
-      height: 40vh;
-    }
-
-    #btnWrapper {
-      margin:2 0.5rem 0 0.5rem;;
-    }
-
-    .eventCardWrapper {
-      width: 30vw;
-    }
-
-    .eventCardTextWrapper {
-      margin: 0.2rem 0;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+@media screen and (min-width: 1536px) {
+  .eventCardWrapper {
+      width: 15vw;
+      height: 32vh;
     }
 }
 
-@media  (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
+
   #mainPageBanner,
-    #eventPageBanner,
-    #postPageBanner,
-    #myFavPageBanner {
-      height: 70vh;
-    }
+  #eventPageBanner,
+  #postPageBanner,
+  #myFavPageBanner {
+    height: 70vh;
+  }
 
-  .card-wrapper, .swiper {
+  .card-wrapper,
+  .swiper {
     width: 60vw;
     height: 40vh;
   }
@@ -311,15 +242,91 @@ body, html {
   }
 
   .eventCardWrapper {
-      width: 22vw;
-      height: 30vh;
-    }
-  
+    width: 22vw;
+    height: 30vh;
+  }
+
 }
 
-@media (min-width: 1536px) {
+@media screen and (min-width: 768px) {
+  .roundImg {
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .card-wrapper {
+    width: 80vw;
+    height: 40vh;
+    border: 1px solid rgb(174, 174, 174);
+    padding: 10px;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .image-wrapper {
+    width: 60vw;
+    height: auto;
+    position: relative;
+    object-fit: contain;
+  }
+
+  .swiper {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  #btnWrapper {
+    margin: 2 0.5rem 0 0.5rem;
+    ;
+  }
+
   .eventCardWrapper {
-      width: 15vw;
-      height: 32vh;
-    }
+    width: 30vw;
+  }
+
+  .eventCardTextWrapper {
+    margin: 0.2rem 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width:640px) {
+
+  #mainPageBanner,
+  #eventPageBanner,
+  #postPageBanner,
+  #myFavPageBanner {
+    height: 50vh;
+  }
+
+  .swiper {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .card-wrapper {
+    width: 80vw;
+    height: 40vh;
+    border: 1px solid rgb(174, 174, 174);
+    padding: 0.5rem;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .text-hidden {
+    display: inline-block;
+  }
+
+  .image-wrapper {
+    width: 60vw;
+    height: auto;
+    position: relative;
+    object-fit: contain;
+  }
 }
