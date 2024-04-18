@@ -188,7 +188,7 @@ const Events = () => {
 
         <section
           id="eventCards"
-          className="mb-10 grid grid-cols-2 gap-5 justify-items-center md:grid-cols-3 md:gap-8 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-12"
+          className="mb-10 grid grid-cols-2 gap-5 justify-items-center md:grid-cols-3 md:gap-8 xl:grid-cols-4 2xl:grid-cols-5"
         >
           {filteredData?.length > 0 ? (
             filteredData.map((event) => {

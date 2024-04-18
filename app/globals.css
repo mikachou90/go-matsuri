@@ -213,13 +213,6 @@ body, html {
     align-items: center;
 }
 
-@media screen and (min-width: 1536px) {
-  .eventCardWrapper {
-      width: 15vw;
-      height: 32vh;
-    }
-}
-
 @media screen and (min-width: 1280px) {
 
   #mainPageBanner,
@@ -242,8 +235,8 @@ body, html {
   }
 
   .eventCardWrapper {
-    width: 22vw;
-    height: 30vh;
+   max-width: 18vw;
+   max-height: 30vh;
   }
 
 }
