@@ -9,8 +9,8 @@ export default function IntroCards({ src, intro, title, pageLink }) {
       <div className="introCardContainer">
         <Image
           src={src}
-          width={1200}
-          height={800}
+          width={800}
+          height={500}
           alt="intro picture"
           className="roundImg"
         />
