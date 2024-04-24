@@ -4,7 +4,7 @@ export default function IntroCards({ src, intro, title, pageLink }) {
   return (
     <a
       href={pageLink}
-      className="border-[2px] border-transparent rounded-lg hover:border-amber-400 hover:shadow-lg"
+      className="border-[2px] border-transparent rounded-lg  sm:hover:border-amber-400 sm:hover:shadow-lg"
     >
       <div className="introCardContainer">
         <Image
