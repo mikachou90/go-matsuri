@@ -222,12 +222,6 @@ body, html {
     height: 70vh;
   }
 
-  .card-wrapper,
-  .swiper {
-    width: 60vw;
-    height: 40vh;
-  }
-
   .roundImg {
     border-radius: 50%;
     max-width: 12vw;
@@ -250,8 +244,8 @@ body, html {
   }
 
   .card-wrapper {
-    width: 80vw;
-    height: 40vh;
+    max-width: 60vw;
+    max-height: 35vh;
     border: 1px solid rgb(174, 174, 174);
     padding: 10px;
     display: flex;
@@ -260,15 +254,15 @@ body, html {
   }
 
   .image-wrapper {
-    width: 60vw;
+    max-width: 50vw;
     height: auto;
     position: relative;
     object-fit: contain;
   }
 
   .swiper {
-    width: 80vw;
-    height: 40vh;
+    max-width: 60vw;
+    max-height: 35vh;
   }
 
   #btnWrapper {

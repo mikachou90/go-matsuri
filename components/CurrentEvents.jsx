@@ -76,10 +76,10 @@ export default function CurrentEvents() {
                         />
                       </div>
                       <div className=" py-2 sm:w-[40%] sm:px-2 md:px-5">
-                        <p className="text-base font-bold mb-1 lg:text-lg md:mb-2 lg:mb-5">
+                        <p className="text-base font-bold mb-1 lg:text-lg md:mb-2 ">
                           {event.name}
                         </p>
-                        <div className="p-1 text-ellipsis overflow-hidden ... lg:h-[30vh]">
+                        <div className="p-1 text-ellipsis overflow-hidden ... md:h-[20vh] lg:h-[25vh]">
                           <p className="text-sm lg:text-base text-hidden">
                             {event.description}
                           </p>
