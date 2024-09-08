@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function IntroCards({ src, intro, title, pageLink }) {
   return (
-    <a
+    <Link
       href={pageLink}
       className="border-[2px] border-transparent rounded-lg  sm:hover:border-amber-400 sm:hover:shadow-lg"
     >
@@ -19,6 +20,6 @@ export default function IntroCards({ src, intro, title, pageLink }) {
           {intro}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
