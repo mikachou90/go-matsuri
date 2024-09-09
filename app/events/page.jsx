@@ -15,7 +15,6 @@ const Events = () => {
   };
 
   // get all data from firebase
-  const [eventsData, setEventsData] = useState({});
   const [newEventsArray, setNewEventsArray] = useState([]);
 
   const fetchData = () => {
@@ -25,9 +24,8 @@ const Events = () => {
       eventsRef,
       (snapshot) => {
         const data = snapshot.val();
-        setEventsData(data.events);
 
-        // make id = key and transfer data to array
+        // make id = key and transfer data to new array
         const newArray = Object.keys(data.events).map((eventKey) => {
           return {
             ...data.events[eventKey],
@@ -35,6 +33,8 @@ const Events = () => {
           };
         });
 
+        console.log("data", data);
+        console.log("newArray", newArray);
         setNewEventsArray(newArray);
       },
 
