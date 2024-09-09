@@ -45,7 +45,7 @@ const PostEvent = () => {
       alert("祭典新增成功");
       router.push("/events");
     } catch (error) {
-      console.error("Post new Event error:", error);
+      alert("祭典新增失敗，請稍後再試一次");
     }
   };
 

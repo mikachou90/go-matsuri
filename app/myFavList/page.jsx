@@ -55,12 +55,12 @@ const MyFavList = () => {
     const snapshot = await get(eventRef);
     if (snapshot.exists()) {
       const isMyFav = snapshot.val().isMyFav;
-
       await update(eventRef, { isMyFav: !isMyFav });
       await fetchData();
     } else {
-      console.log("No such event!");
+      alert("找不到該筆祭典資料!");
     }
+    alert("已更新您的祭典清單!");
   };
 
   return (

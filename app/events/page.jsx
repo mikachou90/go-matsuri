@@ -33,8 +33,6 @@ const Events = () => {
           };
         });
 
-        console.log("data", data);
-        console.log("newArray", newArray);
         setNewEventsArray(newArray);
       },
 
@@ -109,8 +107,9 @@ const Events = () => {
       await update(eventRef, { isMyFav: !isMyFav });
       await fetchData();
     } else {
-      console.log("No such event!");
+      alert("找不到該筆祭典資料!");
     }
+    alert("已更新您的祭典清單!");
   };
 
   return (
